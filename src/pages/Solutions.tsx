@@ -1,221 +1,182 @@
 
 import Layout from "@/components/Layout";
-import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Play, ArrowDown, Check, Users, Settings, Clock } from "lucide-react";
+import { 
+  Cloud, 
+  BarChart3, 
+  Users, 
+  Shield, 
+  Zap, 
+  Globe,
+  ArrowRight,
+  CheckCircle
+} from "lucide-react";
 
 const Solutions = () => {
   const solutions = [
     {
-      id: "workflow-automation",
-      title: "Workflow Automation Platform",
-      description: "Streamline complex business processes with intelligent automation that adapts to your workflow patterns.",
-      features: [
-        "Visual workflow designer",
-        "AI-powered optimization",
-        "Real-time monitoring",
-        "Custom integrations",
-        "Advanced analytics"
-      ],
-      image: "https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
-      demoUrl: "#",
-      category: "Automation"
+      id: 1,
+      title: "Cloud Infrastructure",
+      description: "Scalable, secure cloud solutions that grow with your business",
+      icon: Cloud,
+      features: ["99.9% Uptime", "Auto-scaling", "24/7 Monitoring", "Global CDN"],
+      category: "Infrastructure",
+      demo: "/demos/cloud-infrastructure"
     },
     {
-      id: "data-analytics",
-      title: "Advanced Data Analytics Suite",
-      description: "Transform raw data into actionable insights with our comprehensive analytics and visualization platform.",
-      features: [
-        "Interactive dashboards",
-        "Predictive modeling",
-        "Real-time data processing",
-        "Custom reporting",
-        "Machine learning insights"
-      ],
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2015&q=80",
-      demoUrl: "#",
-      category: "Analytics"
+      id: 2,
+      title: "Business Analytics",
+      description: "Data-driven insights to optimize your operations and drive growth",
+      icon: BarChart3,
+      features: ["Real-time Dashboards", "Predictive Analytics", "Custom Reports", "AI Insights"],
+      category: "Analytics",
+      demo: "/demos/business-analytics"
     },
     {
-      id: "collaboration-hub",
-      title: "Team Collaboration Hub",
-      description: "Unite your team with powerful collaboration tools designed for modern distributed workforces.",
-      features: [
-        "Unified communication",
-        "Project management",
-        "Document collaboration",
-        "Video conferencing",
-        "Task automation"
-      ],
-      image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
-      demoUrl: "#",
-      category: "Collaboration"
+      id: 3,
+      title: "Team Collaboration",
+      description: "Streamline teamwork with integrated communication and project management",
+      icon: Users,
+      features: ["Video Conferencing", "Task Management", "File Sharing", "Team Chat"],
+      category: "Productivity",
+      demo: "/demos/team-collaboration"
+    },
+    {
+      id: 4,
+      title: "Security Suite",
+      description: "Enterprise-grade security to protect your digital assets",
+      icon: Shield,
+      features: ["Advanced Encryption", "Threat Detection", "Compliance Tools", "Access Control"],
+      category: "Security",
+      demo: "/demos/security-suite"
+    },
+    {
+      id: 5,
+      title: "Automation Platform",
+      description: "Automate repetitive tasks and workflows to boost efficiency",
+      icon: Zap,
+      features: ["Workflow Builder", "API Integration", "Smart Triggers", "Process Optimization"],
+      category: "Automation",
+      demo: "/demos/automation-platform"
+    },
+    {
+      id: 6,
+      title: "Global Marketplace",
+      description: "Connect with customers worldwide through our integrated marketplace",
+      icon: Globe,
+      features: ["Multi-currency", "Global Payments", "Inventory Management", "Customer Analytics"],
+      category: "E-commerce",
+      demo: "/demos/global-marketplace"
     }
   ];
 
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-slate-50 to-blue-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <Badge className="mb-6 bg-blue-100 text-blue-800 hover:bg-blue-200">
-            🎯 Complete Solution Suite
-          </Badge>
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Comprehensive Digital Solutions
-            <span className="block text-blue-600">for Every Business Need</span>
-          </h1>
-          <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-            Discover our full range of SaaS products designed to address specific business challenges 
-            and drive measurable results across your organization.
-          </p>
-          <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
-            Explore All Solutions
-          </Button>
+      <section className="py-20 bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-slate-900 dark:to-slate-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
+              Solutions That <span className="text-blue-600 dark:text-blue-400">Transform</span> Your Business
+            </h1>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
+              Discover our comprehensive suite of digital solutions designed to streamline operations, 
+              boost productivity, and drive sustainable growth for businesses of all sizes.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600">
+                Explore All Solutions
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+              <Button variant="outline" size="lg" className="border-blue-600 text-blue-600 hover:bg-blue-50 dark:border-blue-400 dark:text-blue-400 dark:hover:bg-blue-950">
+                Schedule Demo
+              </Button>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* Solutions Grid */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="space-y-20">
-            {solutions.map((solution, index) => (
-              <div key={solution.id} className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${
-                index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''
-              }`}>
-                <div className={index % 2 === 1 ? 'lg:col-start-2' : ''}>
-                  <div className="relative">
-                    <img 
-                      src={solution.image}
-                      alt={solution.title}
-                      className="rounded-lg shadow-2xl"
-                    />
-                    <div className="absolute inset-0 bg-blue-600/20 rounded-lg flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
-                      <Button 
-                        size="lg" 
-                        className="bg-white text-blue-600 hover:bg-blue-50"
-                        onClick={() => console.log(`Watch demo for ${solution.title}`)}
-                      >
-                        <Play className="h-5 w-5 mr-2" />
-                        Watch Demo
-                      </Button>
-                    </div>
-                  </div>
-                </div>
-                
-                <div className={index % 2 === 1 ? 'lg:col-start-1' : ''}>
-                  <Badge className="mb-4 bg-blue-100 text-blue-800">
-                    {solution.category}
-                  </Badge>
-                  <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                    {solution.title}
-                  </h2>
-                  <p className="text-lg text-gray-600 mb-6">
-                    {solution.description}
-                  </p>
-                  
-                  <div className="space-y-3 mb-8">
-                    {solution.features.map((feature, featureIndex) => (
-                      <div key={featureIndex} className="flex items-center space-x-3">
-                        <Check className="h-5 w-5 text-green-500 flex-shrink-0" />
-                        <span className="text-gray-700">{feature}</span>
-                      </div>
-                    ))}
-                  </div>
-                  
-                  <div className="flex flex-col sm:flex-row gap-4">
-                    <Button 
-                      size="lg" 
-                      className="bg-blue-600 hover:bg-blue-700 text-white"
-                      onClick={() => console.log(`Request demo for ${solution.title}`)}
-                    >
-                      Request Demo
-                    </Button>
-                    <Button 
-                      variant="outline" 
-                      size="lg" 
-                      className="border-blue-600 text-blue-600 hover:bg-blue-50"
-                    >
-                      Learn More
-                    </Button>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Integration Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Seamless Integrations
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+              Comprehensive Digital Solutions
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Connect UTOPIA Digital Solution with your existing tools and platforms 
-              for a unified workflow experience.
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              From cloud infrastructure to advanced analytics, our solutions are designed to meet 
+              the evolving needs of modern businesses.
             </p>
           </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Card className="text-center hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <Users className="h-12 w-12 text-blue-600 mx-auto mb-4" />
-                <CardTitle>CRM Integration</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">
-                  Sync customer data and interactions across all your sales and marketing platforms.
-                </p>
-              </CardContent>
-            </Card>
-            
-            <Card className="text-center hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <Settings className="h-12 w-12 text-blue-600 mx-auto mb-4" />
-                <CardTitle>API Ecosystem</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">
-                  Build custom integrations with our robust RESTful API and comprehensive documentation.
-                </p>
-              </CardContent>
-            </Card>
-            
-            <Card className="text-center hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <Clock className="h-12 w-12 text-blue-600 mx-auto mb-4" />
-                <CardTitle>Real-time Sync</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">
-                  Keep all your systems in sync with real-time data synchronization and updates.
-                </p>
-              </CardContent>
-            </Card>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {solutions.map((solution) => {
+              const IconComponent = solution.icon;
+              return (
+                <Card key={solution.id} className="group hover:shadow-xl transition-all duration-300 border-0 shadow-lg dark:bg-slate-800 dark:hover:bg-slate-750">
+                  <CardHeader className="pb-4">
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="p-3 bg-blue-100 dark:bg-blue-900/30 rounded-lg group-hover:bg-blue-200 dark:group-hover:bg-blue-800/40 transition-colors">
+                        <IconComponent className="h-6 w-6 text-blue-600 dark:text-blue-400" />
+                      </div>
+                      <Badge variant="secondary" className="dark:bg-slate-700 dark:text-slate-300">
+                        {solution.category}
+                      </Badge>
+                    </div>
+                    <CardTitle className="text-xl font-bold text-foreground group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                      {solution.title}
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground mb-6 leading-relaxed">
+                      {solution.description}
+                    </p>
+                    
+                    <div className="space-y-3 mb-6">
+                      {solution.features.map((feature, index) => (
+                        <div key={index} className="flex items-center space-x-2">
+                          <CheckCircle className="h-4 w-4 text-green-500 dark:text-green-400 flex-shrink-0" />
+                          <span className="text-sm text-muted-foreground">{feature}</span>
+                        </div>
+                      ))}
+                    </div>
+
+                    <div className="flex flex-col sm:flex-row gap-3">
+                      <Button 
+                        className="flex-1 bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600"
+                        onClick={() => window.open(solution.demo, '_blank')}
+                      >
+                        Watch Demo
+                      </Button>
+                      <Button variant="outline" className="flex-1 border-blue-600 text-blue-600 hover:bg-blue-50 dark:border-blue-400 dark:text-blue-400 dark:hover:bg-blue-950">
+                        Learn More
+                      </Button>
+                    </div>
+                  </CardContent>
+                </Card>
+              );
+            })}
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-blue-600 to-purple-600">
+      <section className="py-20 bg-gradient-to-r from-blue-600 to-indigo-700 dark:from-blue-800 dark:to-indigo-900">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            Ready to See Our Solutions in Action?
+            Ready to Transform Your Business?
           </h2>
-          <p className="text-xl text-blue-100 mb-8">
-            Schedule a personalized demo and discover how UTOPIA Digital Solution 
-            can transform your business operations.
+          <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+            Join thousands of businesses that have already transformed their operations with our solutions.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-white text-blue-600 hover:bg-blue-50 px-8 py-3 text-lg">
-              Schedule Demo
+            <Button size="lg" variant="secondary" className="bg-white text-blue-600 hover:bg-gray-100">
+              Get Started Today
             </Button>
-            <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-blue-600 px-8 py-3 text-lg">
-              View Pricing
+            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600">
+              Contact Sales
             </Button>
           </div>
         </div>
