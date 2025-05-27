@@ -1,0 +1,239 @@
+
+import Layout from "@/components/Layout";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Calendar, Clock, ArrowDown } from "lucide-react";
+
+const Blog = () => {
+  const featuredPost = {
+    title: "The Future of Business Automation: AI-Driven Workflows in 2024",
+    excerpt: "Discover how artificial intelligence is revolutionizing business processes and what it means for your organization's future.",
+    image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+    author: "Sarah Chen",
+    date: "March 15, 2024",
+    readTime: "8 min read",
+    category: "AI & Automation"
+  };
+
+  const blogPosts = [
+    {
+      title: "5 Ways SaaS Solutions Can Reduce Operational Costs",
+      excerpt: "Learn practical strategies to cut expenses while improving efficiency through smart SaaS implementation.",
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2015&q=80",
+      author: "Marcus Rodriguez",
+      date: "March 12, 2024",
+      readTime: "6 min read",
+      category: "Cost Optimization"
+    },
+    {
+      title: "Data Security Best Practices for Modern Businesses",
+      excerpt: "Essential security measures every business should implement to protect sensitive data and maintain customer trust.",
+      image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+      author: "Alex Thompson",
+      date: "March 10, 2024",
+      readTime: "7 min read",
+      category: "Security"
+    },
+    {
+      title: "Building a Remote-First Culture with Digital Tools",
+      excerpt: "How to create an effective remote work environment using the right combination of digital collaboration tools.",
+      image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+      author: "Emily Davis",
+      date: "March 8, 2024",
+      readTime: "5 min read",
+      category: "Remote Work"
+    },
+    {
+      title: "Integration Strategies: Connecting Your Tech Stack",
+      excerpt: "A comprehensive guide to seamlessly integrating multiple software solutions for maximum efficiency.",
+      image: "https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+      author: "Sarah Chen",
+      date: "March 5, 2024",
+      readTime: "9 min read",
+      category: "Integration"
+    },
+    {
+      title: "Customer Success Stories: Real ROI from Digital Transformation",
+      excerpt: "See how our clients achieved measurable results through strategic digital transformation initiatives.",
+      image: "https://images.unsplash.com/photo-1551836022-deb4988cc6c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+      author: "Marcus Rodriguez",
+      date: "March 3, 2024",
+      readTime: "10 min read",
+      category: "Case Studies"
+    },
+    {
+      title: "The Rise of No-Code Solutions in Enterprise",
+      excerpt: "Exploring how no-code platforms are democratizing software development and accelerating business innovation.",
+      image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+      author: "Alex Thompson",
+      date: "March 1, 2024",
+      readTime: "6 min read",
+      category: "No-Code"
+    }
+  ];
+
+  const categories = ["All", "AI & Automation", "Cost Optimization", "Security", "Remote Work", "Integration", "Case Studies"];
+
+  return (
+    <Layout>
+      {/* Hero Section */}
+      <section className="py-20 bg-gradient-to-br from-slate-50 to-blue-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <Badge className="mb-6 bg-blue-100 text-blue-800 hover:bg-blue-200">
+            📖 Insights & Resources
+          </Badge>
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            Industry Insights & 
+            <span className="block text-blue-600">Digital Innovation</span>
+          </h1>
+          <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+            Stay ahead of the curve with expert insights, industry trends, and practical guides 
+            to help you navigate the digital transformation landscape.
+          </p>
+        </div>
+      </section>
+
+      {/* Featured Post */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Card className="border-0 shadow-2xl overflow-hidden">
+            <div className="grid grid-cols-1 lg:grid-cols-2">
+              <div className="relative">
+                <img 
+                  src={featuredPost.image} 
+                  alt={featuredPost.title}
+                  className="w-full h-64 lg:h-full object-cover"
+                />
+                <Badge className="absolute top-4 left-4 bg-blue-600 text-white">
+                  Featured
+                </Badge>
+              </div>
+              <div className="p-8 lg:p-12 flex flex-col justify-center">
+                <Badge className="mb-4 bg-blue-100 text-blue-800 w-fit">
+                  {featuredPost.category}
+                </Badge>
+                <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+                  {featuredPost.title}
+                </h2>
+                <p className="text-lg text-gray-600 mb-6">
+                  {featuredPost.excerpt}
+                </p>
+                <div className="flex items-center space-x-4 text-sm text-gray-500 mb-6">
+                  <span className="font-medium">{featuredPost.author}</span>
+                  <div className="flex items-center space-x-1">
+                    <Calendar className="h-4 w-4" />
+                    <span>{featuredPost.date}</span>
+                  </div>
+                  <div className="flex items-center space-x-1">
+                    <Clock className="h-4 w-4" />
+                    <span>{featuredPost.readTime}</span>
+                  </div>
+                </div>
+                <Button className="bg-blue-600 hover:bg-blue-700 text-white w-fit">
+                  Read Full Article
+                </Button>
+              </div>
+            </div>
+          </Card>
+        </div>
+      </section>
+
+      {/* Category Filter */}
+      <section className="py-8 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-wrap gap-2 justify-center">
+            {categories.map((category, index) => (
+              <Button 
+                key={index}
+                variant={index === 0 ? "default" : "outline"}
+                className={index === 0 ? "bg-blue-600 hover:bg-blue-700 text-white" : "border-gray-300 text-gray-700 hover:bg-gray-100"}
+              >
+                {category}
+              </Button>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Blog Posts Grid */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {blogPosts.map((post, index) => (
+              <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden">
+                <div className="relative">
+                  <img 
+                    src={post.image} 
+                    alt={post.title}
+                    className="w-full h-48 object-cover"
+                  />
+                  <Badge className="absolute top-4 left-4 bg-blue-600 text-white">
+                    {post.category}
+                  </Badge>
+                </div>
+                <CardHeader className="pb-3">
+                  <h3 className="text-lg font-bold text-gray-900 line-clamp-2">
+                    {post.title}
+                  </h3>
+                </CardHeader>
+                <CardContent className="pt-0">
+                  <p className="text-gray-600 mb-4 line-clamp-3">
+                    {post.excerpt}
+                  </p>
+                  <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
+                    <span className="font-medium">{post.author}</span>
+                    <div className="flex items-center space-x-1">
+                      <Clock className="h-4 w-4" />
+                      <span>{post.readTime}</span>
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center space-x-1 text-sm text-gray-500">
+                      <Calendar className="h-4 w-4" />
+                      <span>{post.date}</span>
+                    </div>
+                    <Button variant="outline" size="sm" className="text-blue-600 border-blue-600 hover:bg-blue-50">
+                      Read More
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+          
+          <div className="text-center mt-12">
+            <Button variant="outline" size="lg" className="border-blue-600 text-blue-600 hover:bg-blue-50">
+              Load More Articles
+              <ArrowDown className="h-4 w-4 ml-2" />
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Newsletter Signup */}
+      <section className="py-20 bg-gradient-to-r from-blue-600 to-purple-600">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+            Stay Updated with Industry Insights
+          </h2>
+          <p className="text-xl text-blue-100 mb-8">
+            Subscribe to our newsletter and get the latest articles, case studies, and industry insights delivered to your inbox.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
+            <input 
+              type="email" 
+              placeholder="Enter your email"
+              className="flex-1 px-4 py-3 rounded-lg border-0 focus:ring-2 focus:ring-white/20"
+            />
+            <Button size="lg" className="bg-white text-blue-600 hover:bg-blue-50 px-8">
+              Subscribe
+            </Button>
+          </div>
+        </div>
+      </section>
+    </Layout>
+  );
+};
+
+export default Blog;
