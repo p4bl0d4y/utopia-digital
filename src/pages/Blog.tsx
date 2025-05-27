@@ -78,16 +78,16 @@ const Blog = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-slate-50 to-blue-50">
+      <section className="py-20 bg-gradient-to-br from-slate-50 to-blue-50 dark:from-slate-900 dark:to-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <Badge className="mb-6 bg-blue-100 text-blue-800 hover:bg-blue-200">
+          <Badge className="mb-6 bg-blue-100 text-blue-800 hover:bg-blue-200 dark:bg-blue-900 dark:text-blue-200 dark:hover:bg-blue-800">
             📖 Insights & Resources
           </Badge>
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
             Industry Insights & 
-            <span className="block text-blue-600">Digital Innovation</span>
+            <span className="block text-blue-600 dark:text-blue-400">Digital Innovation</span>
           </h1>
-          <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
             Stay ahead of the curve with expert insights, industry trends, and practical guides 
             to help you navigate the digital transformation landscape.
           </p>
@@ -97,7 +97,7 @@ const Blog = () => {
       {/* Featured Post */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Card className="border-0 shadow-2xl overflow-hidden">
+          <Card className="border-0 shadow-2xl overflow-hidden dark:bg-slate-800">
             <div className="grid grid-cols-1 lg:grid-cols-2">
               <div className="relative">
                 <img 
@@ -105,21 +105,21 @@ const Blog = () => {
                   alt={featuredPost.title}
                   className="w-full h-64 lg:h-full object-cover"
                 />
-                <Badge className="absolute top-4 left-4 bg-blue-600 text-white">
+                <Badge className="absolute top-4 left-4 bg-blue-600 text-white dark:bg-blue-500">
                   Featured
                 </Badge>
               </div>
               <div className="p-8 lg:p-12 flex flex-col justify-center">
-                <Badge className="mb-4 bg-blue-100 text-blue-800 w-fit">
+                <Badge className="mb-4 bg-blue-100 text-blue-800 w-fit dark:bg-blue-900 dark:text-blue-200">
                   {featuredPost.category}
                 </Badge>
-                <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+                <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
                   {featuredPost.title}
                 </h2>
-                <p className="text-lg text-gray-600 mb-6">
+                <p className="text-lg text-muted-foreground mb-6">
                   {featuredPost.excerpt}
                 </p>
-                <div className="flex items-center space-x-4 text-sm text-gray-500 mb-6">
+                <div className="flex items-center space-x-4 text-sm text-muted-foreground mb-6">
                   <span className="font-medium">{featuredPost.author}</span>
                   <div className="flex items-center space-x-1">
                     <Calendar className="h-4 w-4" />
@@ -130,7 +130,7 @@ const Blog = () => {
                     <span>{featuredPost.readTime}</span>
                   </div>
                 </div>
-                <Button className="bg-blue-600 hover:bg-blue-700 text-white w-fit">
+                <Button className="bg-blue-600 hover:bg-blue-700 text-white w-fit dark:bg-blue-500 dark:hover:bg-blue-600">
                   Read Full Article
                 </Button>
               </div>
@@ -140,14 +140,14 @@ const Blog = () => {
       </section>
 
       {/* Category Filter */}
-      <section className="py-8 bg-gray-50">
+      <section className="py-8 bg-muted/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap gap-2 justify-center">
             {categories.map((category, index) => (
               <Button 
                 key={index}
                 variant={index === 0 ? "default" : "outline"}
-                className={index === 0 ? "bg-blue-600 hover:bg-blue-700 text-white" : "border-gray-300 text-gray-700 hover:bg-gray-100"}
+                className={index === 0 ? "bg-blue-600 hover:bg-blue-700 text-white dark:bg-blue-500 dark:hover:bg-blue-600" : "border-border text-muted-foreground hover:bg-muted"}
               >
                 {category}
               </Button>
@@ -157,31 +157,31 @@ const Blog = () => {
       </section>
 
       {/* Blog Posts Grid */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-muted/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {blogPosts.map((post, index) => (
-              <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden">
+              <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden dark:bg-slate-800">
                 <div className="relative">
                   <img 
                     src={post.image} 
                     alt={post.title}
                     className="w-full h-48 object-cover"
                   />
-                  <Badge className="absolute top-4 left-4 bg-blue-600 text-white">
+                  <Badge className="absolute top-4 left-4 bg-blue-600 text-white dark:bg-blue-500">
                     {post.category}
                   </Badge>
                 </div>
                 <CardHeader className="pb-3">
-                  <h3 className="text-lg font-bold text-gray-900 line-clamp-2">
+                  <h3 className="text-lg font-bold text-foreground line-clamp-2">
                     {post.title}
                   </h3>
                 </CardHeader>
                 <CardContent className="pt-0">
-                  <p className="text-gray-600 mb-4 line-clamp-3">
+                  <p className="text-muted-foreground mb-4 line-clamp-3">
                     {post.excerpt}
                   </p>
-                  <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
+                  <div className="flex items-center justify-between text-sm text-muted-foreground mb-4">
                     <span className="font-medium">{post.author}</span>
                     <div className="flex items-center space-x-1">
                       <Clock className="h-4 w-4" />
@@ -189,11 +189,11 @@ const Blog = () => {
                     </div>
                   </div>
                   <div className="flex items-center justify-between">
-                    <div className="flex items-center space-x-1 text-sm text-gray-500">
+                    <div className="flex items-center space-x-1 text-sm text-muted-foreground">
                       <Calendar className="h-4 w-4" />
                       <span>{post.date}</span>
                     </div>
-                    <Button variant="outline" size="sm" className="text-blue-600 border-blue-600 hover:bg-blue-50">
+                    <Button variant="outline" size="sm" className="text-blue-600 border-blue-600 hover:bg-blue-50 dark:text-blue-400 dark:border-blue-400 dark:hover:bg-blue-950">
                       Read More
                     </Button>
                   </div>
@@ -203,7 +203,7 @@ const Blog = () => {
           </div>
           
           <div className="text-center mt-12">
-            <Button variant="outline" size="lg" className="border-blue-600 text-blue-600 hover:bg-blue-50">
+            <Button variant="outline" size="lg" className="border-blue-600 text-blue-600 hover:bg-blue-50 dark:border-blue-400 dark:text-blue-400 dark:hover:bg-blue-950">
               Load More Articles
               <ArrowDown className="h-4 w-4 ml-2" />
             </Button>
@@ -212,21 +212,21 @@ const Blog = () => {
       </section>
 
       {/* Newsletter Signup */}
-      <section className="py-20 bg-gradient-to-r from-blue-600 to-purple-600">
+      <section className="py-20 bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-700 dark:to-purple-700">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
             Stay Updated with Industry Insights
           </h2>
-          <p className="text-xl text-blue-100 mb-8">
+          <p className="text-xl text-blue-100 dark:text-blue-200 mb-8">
             Subscribe to our newsletter and get the latest articles, case studies, and industry insights delivered to your inbox.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
             <input 
               type="email" 
               placeholder="Enter your email"
-              className="flex-1 px-4 py-3 rounded-lg border-0 focus:ring-2 focus:ring-white/20"
+              className="flex-1 px-4 py-3 rounded-lg border-0 focus:ring-2 focus:ring-white/20 dark:bg-slate-700 dark:text-white dark:placeholder-slate-300"
             />
-            <Button size="lg" className="bg-white text-blue-600 hover:bg-blue-50 px-8">
+            <Button size="lg" className="bg-white text-blue-600 hover:bg-blue-50 px-8 dark:bg-slate-100 dark:text-blue-700 dark:hover:bg-slate-200">
               Subscribe
             </Button>
           </div>
