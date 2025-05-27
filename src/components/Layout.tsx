@@ -47,7 +47,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                 alt="UTOPIA Digital Solution" 
                 className="h-10 w-auto"
               />
-              <span className="text-xl font-bold text-gray-900 dark:text-white hidden sm:block">
+              <span className="text-xl font-bold text-foreground hidden sm:block">
                 UTOPIA Digital Solution
               </span>
             </Link>
@@ -61,7 +61,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                   className={`text-sm font-medium transition-colors duration-200 ${
                     location.pathname === item.href
                       ? "text-blue-600 dark:text-blue-400"
-                      : "text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
+                      : "text-muted-foreground hover:text-blue-600 dark:hover:text-blue-400"
                   }`}
                 >
                   {item.name}
@@ -80,7 +80,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                 variant="ghost"
                 size="sm"
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="text-gray-700 dark:text-gray-300"
+                className="text-muted-foreground"
               >
                 {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
               </Button>
@@ -98,7 +98,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                     className={`text-sm font-medium transition-colors duration-200 ${
                       location.pathname === item.href
                         ? "text-blue-600 dark:text-blue-400"
-                        : "text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
+                        : "text-muted-foreground hover:text-blue-600 dark:hover:text-blue-400"
                     }`}
                   >
                     {item.name}

@@ -9,17 +9,17 @@ import { Link } from "react-router-dom";
 const Index = () => {
   const features = [
     {
-      icon: <Users className="h-8 w-8 text-blue-600" />,
+      icon: <Users className="h-8 w-8 text-blue-600 dark:text-blue-400" />,
       title: "Team Collaboration",
       description: "Seamlessly connect your team with advanced collaboration tools and real-time updates.",
     },
     {
-      icon: <Clock className="h-8 w-8 text-blue-600" />,
+      icon: <Clock className="h-8 w-8 text-blue-600 dark:text-blue-400" />,
       title: "Time Management",
       description: "Optimize productivity with intelligent time tracking and automated workflow management.",
     },
     {
-      icon: <Settings className="h-8 w-8 text-blue-600" />,
+      icon: <Settings className="h-8 w-8 text-blue-600 dark:text-blue-400" />,
       title: "Custom Integrations",
       description: "Connect with your favorite tools through our robust API and integration ecosystem.",
     },
@@ -53,25 +53,25 @@ const Index = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-blue-600/10 via-purple-600/5 to-cyan-600/10"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="animate-fade-in">
-            <Badge className="mb-6 bg-blue-100 text-blue-800 hover:bg-blue-200">
+            <Badge className="mb-6 bg-blue-100 text-blue-800 hover:bg-blue-200 dark:bg-blue-900/30 dark:text-blue-400">
               🚀 Now Available - Next-Gen Digital Solutions
             </Badge>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6 leading-tight">
               Transform Your Business with
               <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent block">
                 UTOPIA Digital Solution
               </span>
             </h1>
-            <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
               Empower your organization with cutting-edge SaaS solutions designed to accelerate growth, 
               streamline operations, and unlock unprecedented productivity.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 text-lg">
+              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white px-8 py-3 text-lg">
                 Request a Demo
               </Button>
               <Link to="/solutions">
-                <Button variant="outline" size="lg" className="border-blue-600 text-blue-600 hover:bg-blue-50 px-8 py-3 text-lg">
+                <Button variant="outline" size="lg" className="border-blue-600 text-blue-600 hover:bg-blue-50 dark:border-blue-400 dark:text-blue-400 dark:hover:bg-blue-950 px-8 py-3 text-lg">
                   Explore Solutions
                 </Button>
               </Link>
@@ -79,27 +79,27 @@ const Index = () => {
           </div>
         </div>
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <ArrowDown className="h-6 w-6 text-gray-400" />
+          <ArrowDown className="h-6 w-6 text-muted-foreground" />
         </div>
       </section>
 
       {/* Problem/Solution Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white dark:bg-slate-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
                 Solving Modern Business Challenges
               </h2>
-              <p className="text-lg text-gray-600 mb-8">
+              <p className="text-lg text-muted-foreground mb-8">
                 Today's businesses face complex operational challenges that traditional solutions can't address. 
                 UTOPIA Digital Solution provides intelligent, scalable platforms that adapt to your unique needs.
               </p>
               <div className="space-y-4">
                 {["Eliminate operational inefficiencies", "Scale without complexity", "Integrate seamlessly"].map((item, index) => (
                   <div key={index} className="flex items-center space-x-3">
-                    <Check className="h-5 w-5 text-green-500" />
-                    <span className="text-gray-700">{item}</span>
+                    <Check className="h-5 w-5 text-green-500 dark:text-green-400" />
+                    <span className="text-muted-foreground">{item}</span>
                   </div>
                 ))}
               </div>
@@ -116,23 +116,23 @@ const Index = () => {
       </section>
 
       {/* Features Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-gray-50 dark:bg-slate-800/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
               Powerful Features for Modern Teams
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Experience the next generation of business software with features designed for today's dynamic workplace.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {features.map((feature, index) => (
-              <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+              <Card key={index} className="border-0 shadow-lg dark:bg-slate-800 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                 <CardContent className="p-8 text-center">
                   <div className="mb-4 flex justify-center">{feature.icon}</div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-3">{feature.title}</h3>
-                  <p className="text-gray-600">{feature.description}</p>
+                  <h3 className="text-xl font-semibold text-foreground mb-3">{feature.title}</h3>
+                  <p className="text-muted-foreground">{feature.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -141,27 +141,27 @@ const Index = () => {
       </section>
 
       {/* Trust Signals */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white dark:bg-slate-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h3 className="text-2xl font-semibold text-gray-900 mb-8">
+          <h3 className="text-2xl font-semibold text-foreground mb-8">
             Trusted by Industry Leaders Worldwide
           </h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 opacity-60">
             <div className="flex items-center justify-center">
-              <div className="text-2xl font-bold text-gray-400">TechCorp</div>
+              <div className="text-2xl font-bold text-muted-foreground">TechCorp</div>
             </div>
             <div className="flex items-center justify-center">
-              <div className="text-2xl font-bold text-gray-400">InnovateLab</div>
+              <div className="text-2xl font-bold text-muted-foreground">InnovateLab</div>
             </div>
             <div className="flex items-center justify-center">
-              <div className="text-2xl font-bold text-gray-400">GrowthCo</div>
+              <div className="text-2xl font-bold text-muted-foreground">GrowthCo</div>
             </div>
             <div className="flex items-center justify-center">
-              <div className="text-2xl font-bold text-gray-400">FutureTech</div>
+              <div className="text-2xl font-bold text-muted-foreground">FutureTech</div>
             </div>
           </div>
           <div className="mt-12">
-            <Badge className="bg-green-100 text-green-800 text-lg px-4 py-2">
+            <Badge className="bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400 text-lg px-4 py-2">
               Trusted by 10,000+ Businesses Globally
             </Badge>
           </div>
@@ -169,7 +169,7 @@ const Index = () => {
       </section>
 
       {/* Testimonials */}
-      <section className="py-20 bg-gradient-to-r from-blue-600 to-purple-600">
+      <section className="py-20 bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-800 dark:to-purple-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
@@ -181,7 +181,7 @@ const Index = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
-              <Card key={index} className="bg-white/10 backdrop-blur-md border-white/20">
+              <Card key={index} className="bg-white/10 backdrop-blur-md border-white/20 dark:bg-white/5">
                 <CardContent className="p-6">
                   <div className="flex mb-4">
                     {[...Array(testimonial.rating)].map((_, i) => (
@@ -201,7 +201,7 @@ const Index = () => {
       </section>
 
       {/* Final CTA */}
-      <section className="py-20 bg-gray-900">
+      <section className="py-20 bg-gray-900 dark:bg-slate-950">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
             Ready to Transform Your Business?
