@@ -4,71 +4,42 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { 
-  Cloud, 
-  BarChart3, 
   Users, 
-  Shield, 
-  Zap, 
-  Globe,
+  Globe2, 
+  Sprout,
   ArrowRight,
   CheckCircle
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Solutions = () => {
   const solutions = [
     {
       id: 1,
-      title: "Cloud Infrastructure",
-      description: "Scalable, secure cloud solutions that grow with your business",
-      icon: Cloud,
-      features: ["99.9% Uptime", "Auto-scaling", "24/7 Monitoring", "Global CDN"],
-      category: "Infrastructure",
-      demo: "/demos/cloud-infrastructure"
+      title: "CRM Solution",
+      description: "Our flagship customer relationship management system designed to streamline your business operations and boost customer satisfaction",
+      icon: Users,
+      features: ["Customer Management", "Sales Pipeline", "Analytics Dashboard", "Team Collaboration"],
+      category: "Business Management",
+      slug: "crm-solution"
     },
     {
       id: 2,
-      title: "Business Analytics",
-      description: "Data-driven insights to optimize your operations and drive growth",
-      icon: BarChart3,
-      features: ["Real-time Dashboards", "Predictive Analytics", "Custom Reports", "AI Insights"],
-      category: "Analytics",
-      demo: "/demos/business-analytics"
+      title: "Ethio-Trade Connect",
+      description: "Revolutionary platform to increase Ethiopia's export capabilities and strengthen foreign exchange earnings",
+      icon: Globe2,
+      features: ["Export Management", "Trade Analytics", "Global Marketplace", "Foreign Exchange Tracking"],
+      category: "Trade & Export",
+      slug: "ethio-trade-connect"
     },
     {
       id: 3,
-      title: "Team Collaboration",
-      description: "Streamline teamwork with integrated communication and project management",
-      icon: Users,
-      features: ["Video Conferencing", "Task Management", "File Sharing", "Team Chat"],
-      category: "Productivity",
-      demo: "/demos/team-collaboration"
-    },
-    {
-      id: 4,
-      title: "Security Suite",
-      description: "Enterprise-grade security to protect your digital assets",
-      icon: Shield,
-      features: ["Advanced Encryption", "Threat Detection", "Compliance Tools", "Access Control"],
-      category: "Security",
-      demo: "/demos/security-suite"
-    },
-    {
-      id: 5,
-      title: "Automation Platform",
-      description: "Automate repetitive tasks and workflows to boost efficiency",
-      icon: Zap,
-      features: ["Workflow Builder", "API Integration", "Smart Triggers", "Process Optimization"],
-      category: "Automation",
-      demo: "/demos/automation-platform"
-    },
-    {
-      id: 6,
-      title: "Global Marketplace",
-      description: "Connect with customers worldwide through our integrated marketplace",
-      icon: Globe,
-      features: ["Multi-currency", "Global Payments", "Inventory Management", "Customer Analytics"],
-      category: "E-commerce",
-      demo: "/demos/global-marketplace"
+      title: "Green Growth Ethiopia",
+      description: "Modernizing Ethiopia's agriculture sector through innovative technology and sustainable farming practices",
+      icon: Sprout,
+      features: ["Smart Farming Tools", "Crop Management", "Weather Analytics", "Market Access"],
+      category: "Agriculture Tech",
+      slug: "green-growth-ethiopia"
     }
   ];
 
@@ -79,15 +50,15 @@ const Solutions = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
-              Solutions That <span className="text-blue-600 dark:text-blue-400">Transform</span> Your Business
+              Solutions That <span className="text-blue-600 dark:text-blue-400">Transform</span> Ethiopia
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-              Discover our comprehensive suite of digital solutions designed to streamline operations, 
-              boost productivity, and drive sustainable growth for businesses of all sizes.
+              Discover our three innovative products designed to revolutionize business management, 
+              boost exports, and modernize agriculture in Ethiopia.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600">
-                Explore All Solutions
+                Explore Our Products
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
               <Button variant="outline" size="lg" className="border-blue-600 text-blue-600 hover:bg-blue-50 dark:border-blue-400 dark:text-blue-400 dark:hover:bg-blue-950">
@@ -103,11 +74,11 @@ const Solutions = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Comprehensive Digital Solutions
+              Our Three Revolutionary Products
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              From cloud infrastructure to advanced analytics, our solutions are designed to meet 
-              the evolving needs of modern businesses.
+              Each product is specifically designed to address critical challenges in Ethiopia's 
+              business landscape, trade sector, and agricultural development.
             </p>
           </div>
 
@@ -146,13 +117,15 @@ const Solutions = () => {
                     <div className="flex flex-col sm:flex-row gap-3">
                       <Button 
                         className="flex-1 bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600"
-                        onClick={() => window.open(solution.demo, '_blank')}
+                        onClick={() => window.open(`/demos/${solution.slug}`, '_blank')}
                       >
                         Watch Demo
                       </Button>
-                      <Button variant="outline" className="flex-1 border-blue-600 text-blue-600 hover:bg-blue-50 dark:border-blue-400 dark:text-blue-400 dark:hover:bg-blue-950">
-                        Learn More
-                      </Button>
+                      <Link to={`/solutions/${solution.slug}`} className="flex-1">
+                        <Button variant="outline" className="w-full border-blue-600 text-blue-600 hover:bg-blue-50 dark:border-blue-400 dark:text-blue-400 dark:hover:bg-blue-950">
+                          Learn More
+                        </Button>
+                      </Link>
                     </div>
                   </CardContent>
                 </Card>
@@ -166,10 +139,10 @@ const Solutions = () => {
       <section className="py-20 bg-gradient-to-r from-blue-600 to-indigo-700 dark:from-blue-800 dark:to-indigo-900">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            Ready to Transform Your Business?
+            Ready to Transform Ethiopia's Future?
           </h2>
           <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-            Join thousands of businesses that have already transformed their operations with our solutions.
+            Join us in revolutionizing business management, boosting exports, and modernizing agriculture in Ethiopia.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" variant="secondary" className="bg-white text-blue-600 hover:bg-gray-100">
