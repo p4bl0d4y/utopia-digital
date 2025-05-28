@@ -4,8 +4,12 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Calendar, Clock, ArrowDown } from "lucide-react";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Blog = () => {
+  const [selectedCategory, setSelectedCategory] = useState("All");
+
   const featuredPost = {
     title: "The Future of Business Automation: AI-Driven Workflows in 2024",
     excerpt: "Discover how artificial intelligence is revolutionizing business processes and what it means for your organization's future.",
@@ -13,7 +17,8 @@ const Blog = () => {
     author: "Sarah Chen",
     date: "March 15, 2024",
     readTime: "8 min read",
-    category: "AI & Automation"
+    category: "AI & Automation",
+    slug: "future-of-business-automation"
   };
 
   const blogPosts = [
@@ -24,7 +29,8 @@ const Blog = () => {
       author: "Marcus Rodriguez",
       date: "March 12, 2024",
       readTime: "6 min read",
-      category: "Cost Optimization"
+      category: "Cost Optimization",
+      slug: "saas-solutions-reduce-costs"
     },
     {
       title: "Data Security Best Practices for Modern Businesses",
@@ -33,7 +39,8 @@ const Blog = () => {
       author: "Alex Thompson",
       date: "March 10, 2024",
       readTime: "7 min read",
-      category: "Security"
+      category: "Security",
+      slug: "data-security-best-practices"
     },
     {
       title: "Building a Remote-First Culture with Digital Tools",
@@ -42,7 +49,8 @@ const Blog = () => {
       author: "Emily Davis",
       date: "March 8, 2024",
       readTime: "5 min read",
-      category: "Remote Work"
+      category: "Remote Work",
+      slug: "remote-first-culture"
     },
     {
       title: "Integration Strategies: Connecting Your Tech Stack",
@@ -51,7 +59,8 @@ const Blog = () => {
       author: "Sarah Chen",
       date: "March 5, 2024",
       readTime: "9 min read",
-      category: "Integration"
+      category: "Integration",
+      slug: "integration-strategies"
     },
     {
       title: "Customer Success Stories: Real ROI from Digital Transformation",
@@ -60,7 +69,8 @@ const Blog = () => {
       author: "Marcus Rodriguez",
       date: "March 3, 2024",
       readTime: "10 min read",
-      category: "Case Studies"
+      category: "Case Studies",
+      slug: "customer-success-stories"
     },
     {
       title: "The Rise of No-Code Solutions in Enterprise",
@@ -69,11 +79,17 @@ const Blog = () => {
       author: "Alex Thompson",
       date: "March 1, 2024",
       readTime: "6 min read",
-      category: "No-Code"
+      category: "No-Code",
+      slug: "no-code-solutions-enterprise"
     }
   ];
 
-  const categories = ["All", "AI & Automation", "Cost Optimization", "Security", "Remote Work", "Integration", "Case Studies"];
+  const categories = ["All", "AI & Automation", "Cost Optimization", "Security", "Remote Work", "Integration", "Case Studies", "No-Code"];
+
+  // Filter posts based on selected category
+  const filteredPosts = selectedCategory === "All" 
+    ? blogPosts 
+    : blogPosts.filter(post => post.category === selectedCategory);
 
   return (
     <Layout>
@@ -130,9 +146,11 @@ const Blog = () => {
                     <span>{featuredPost.readTime}</span>
                   </div>
                 </div>
-                <Button className="bg-blue-600 hover:bg-blue-700 text-white w-fit dark:bg-blue-500 dark:hover:bg-blue-600">
-                  Read Full Article
-                </Button>
+                <Link to={`/blog/${featuredPost.slug}`}>
+                  <Button className="bg-blue-600 hover:bg-blue-700 text-white w-fit dark:bg-blue-500 dark:hover:bg-blue-600">
+                    Read Full Article
+                  </Button>
+                </Link>
               </div>
             </div>
           </Card>
@@ -146,8 +164,12 @@ const Blog = () => {
             {categories.map((category, index) => (
               <Button 
                 key={index}
-                variant={index === 0 ? "default" : "outline"}
-                className={index === 0 ? "bg-blue-600 hover:bg-blue-700 text-white dark:bg-blue-500 dark:hover:bg-blue-600" : "border-border text-muted-foreground hover:bg-muted"}
+                variant={selectedCategory === category ? "default" : "outline"}
+                className={selectedCategory === category 
+                  ? "bg-blue-600 hover:bg-blue-700 text-white dark:bg-blue-500 dark:hover:bg-blue-600" 
+                  : "border-border text-muted-foreground hover:bg-muted"
+                }
+                onClick={() => setSelectedCategory(category)}
               >
                 {category}
               </Button>
@@ -159,48 +181,56 @@ const Blog = () => {
       {/* Blog Posts Grid */}
       <section className="py-20 bg-muted/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {blogPosts.map((post, index) => (
-              <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden dark:bg-slate-800">
-                <div className="relative">
-                  <img 
-                    src={post.image} 
-                    alt={post.title}
-                    className="w-full h-48 object-cover"
-                  />
-                  <Badge className="absolute top-4 left-4 bg-blue-600 text-white dark:bg-blue-500">
-                    {post.category}
-                  </Badge>
-                </div>
-                <CardHeader className="pb-3">
-                  <h3 className="text-lg font-bold text-foreground line-clamp-2">
-                    {post.title}
-                  </h3>
-                </CardHeader>
-                <CardContent className="pt-0">
-                  <p className="text-muted-foreground mb-4 line-clamp-3">
-                    {post.excerpt}
-                  </p>
-                  <div className="flex items-center justify-between text-sm text-muted-foreground mb-4">
-                    <span className="font-medium">{post.author}</span>
-                    <div className="flex items-center space-x-1">
-                      <Clock className="h-4 w-4" />
-                      <span>{post.readTime}</span>
-                    </div>
+          {filteredPosts.length === 0 ? (
+            <div className="text-center py-12">
+              <p className="text-lg text-muted-foreground">No posts found in this category.</p>
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {filteredPosts.map((post, index) => (
+                <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden dark:bg-slate-800">
+                  <div className="relative">
+                    <img 
+                      src={post.image} 
+                      alt={post.title}
+                      className="w-full h-48 object-cover"
+                    />
+                    <Badge className="absolute top-4 left-4 bg-blue-600 text-white dark:bg-blue-500">
+                      {post.category}
+                    </Badge>
                   </div>
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center space-x-1 text-sm text-muted-foreground">
-                      <Calendar className="h-4 w-4" />
-                      <span>{post.date}</span>
+                  <CardHeader className="pb-3">
+                    <h3 className="text-lg font-bold text-foreground line-clamp-2">
+                      {post.title}
+                    </h3>
+                  </CardHeader>
+                  <CardContent className="pt-0">
+                    <p className="text-muted-foreground mb-4 line-clamp-3">
+                      {post.excerpt}
+                    </p>
+                    <div className="flex items-center justify-between text-sm text-muted-foreground mb-4">
+                      <span className="font-medium">{post.author}</span>
+                      <div className="flex items-center space-x-1">
+                        <Clock className="h-4 w-4" />
+                        <span>{post.readTime}</span>
+                      </div>
                     </div>
-                    <Button variant="outline" size="sm" className="text-blue-600 border-blue-600 hover:bg-blue-50 dark:text-blue-400 dark:border-blue-400 dark:hover:bg-blue-950">
-                      Read More
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center space-x-1 text-sm text-muted-foreground">
+                        <Calendar className="h-4 w-4" />
+                        <span>{post.date}</span>
+                      </div>
+                      <Link to={`/blog/${post.slug}`}>
+                        <Button variant="outline" size="sm" className="text-blue-600 border-blue-600 hover:bg-blue-50 dark:text-blue-400 dark:border-blue-400 dark:hover:bg-blue-950">
+                          Read More
+                        </Button>
+                      </Link>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          )}
           
           <div className="text-center mt-12">
             <Button variant="outline" size="lg" className="border-blue-600 text-blue-600 hover:bg-blue-50 dark:border-blue-400 dark:text-blue-400 dark:hover:bg-blue-950">
