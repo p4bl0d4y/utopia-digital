@@ -3,25 +3,25 @@ import Layout from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ArrowDown, Check, Star, Users, Clock, Settings } from "lucide-react";
+import { ArrowDown, Check, Star, Users, TrendingUp, BarChart3 } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Index = () => {
   const features = [
     {
       icon: <Users className="h-8 w-8 text-blue-600 dark:text-blue-400" />,
-      title: "Team Collaboration",
-      description: "Seamlessly connect your team with advanced collaboration tools and real-time updates.",
+      title: "Customer Management",
+      description: "Centralize all customer information, interactions, and history in one comprehensive platform.",
     },
     {
-      icon: <Clock className="h-8 w-8 text-blue-600 dark:text-blue-400" />,
-      title: "Time Management",
-      description: "Optimize productivity with intelligent time tracking and automated workflow management.",
+      icon: <TrendingUp className="h-8 w-8 text-blue-600 dark:text-blue-400" />,
+      title: "Sales Pipeline",
+      description: "Track leads through every stage of your sales process with automated workflow management.",
     },
     {
-      icon: <Settings className="h-8 w-8 text-blue-600 dark:text-blue-400" />,
-      title: "Custom Integrations",
-      description: "Connect with your favorite tools through our robust API and integration ecosystem.",
+      icon: <BarChart3 className="h-8 w-8 text-blue-600 dark:text-blue-400" />,
+      title: "Analytics & Reporting",
+      description: "Make data-driven decisions with comprehensive analytics and real-time performance reports.",
     },
   ];
 
@@ -29,19 +29,19 @@ const Index = () => {
     {
       name: "Sarah Johnson",
       company: "TechCorp Inc.",
-      content: "UTOPIA Digital Solution transformed our workflow efficiency by 300%. The results were immediate and impressive.",
+      content: "UTOPIA Digital Solution transformed our customer management efficiency by 300%. The results were immediate and impressive.",
       rating: 5,
     },
     {
       name: "Michael Chen",
       company: "Innovation Labs",
-      content: "The most intuitive and powerful SaaS platform we've ever used. Our team productivity has never been higher.",
+      content: "The most intuitive and powerful CRM platform we've ever used. Our sales team productivity has never been higher.",
       rating: 5,
     },
     {
       name: "Emily Rodriguez",
       company: "Growth Dynamics",
-      content: "Outstanding support and incredible features. UTOPIA delivers exactly what modern businesses need.",
+      content: "Outstanding support and incredible features. UTOPIA delivers exactly what modern businesses need for customer success.",
       rating: 5,
     },
   ];
@@ -63,13 +63,15 @@ const Index = () => {
               </span>
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
-              Empower your organization with cutting-edge SaaS solutions designed to accelerate growth, 
-              streamline operations, and unlock unprecedented productivity.
+              Empower your organization with cutting-edge CRM solutions designed to accelerate growth, 
+              streamline operations, and unlock unprecedented productivity in Ethiopia's digital transformation.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white px-8 py-3 text-lg">
-                Request a Demo
-              </Button>
+              <Link to="/signup">
+                <Button size="lg" className="bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white px-8 py-3 text-lg">
+                  Get Started
+                </Button>
+              </Link>
               <Link to="/solutions">
                 <Button variant="outline" size="lg" className="border-blue-600 text-blue-600 hover:bg-blue-50 dark:border-blue-400 dark:text-blue-400 dark:hover:bg-blue-950 px-8 py-3 text-lg">
                   Explore Solutions
@@ -89,14 +91,15 @@ const Index = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-                Solving Modern Business Challenges
+                Solving CRM Challenges for Ethiopian Businesses
               </h2>
               <p className="text-lg text-muted-foreground mb-8">
-                Today's businesses face complex operational challenges that traditional solutions can't address. 
-                UTOPIA Digital Solution provides intelligent, scalable platforms that adapt to your unique needs.
+                Ethiopian businesses need more than just customer management tools—they need intelligent 
+                CRM platforms that understand local markets, support growth, and drive digital transformation 
+                across the country.
               </p>
               <div className="space-y-4">
-                {["Eliminate operational inefficiencies", "Scale without complexity", "Integrate seamlessly"].map((item, index) => (
+                {["Streamline customer relationships", "Boost sales performance", "Make data-driven decisions"].map((item, index) => (
                   <div key={index} className="flex items-center space-x-3">
                     <Check className="h-5 w-5 text-green-500 dark:text-green-400" />
                     <span className="text-muted-foreground">{item}</span>
@@ -120,10 +123,10 @@ const Index = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Powerful Features for Modern Teams
+              Key Advantages of Using CRM Software
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Experience the next generation of business software with features designed for today's dynamic workplace.
+              Experience the transformative power of professional customer relationship management designed for Ethiopian businesses.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -144,17 +147,17 @@ const Index = () => {
       <section className="py-16 bg-white dark:bg-slate-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h3 className="text-2xl font-semibold text-foreground mb-8">
-            Trusted by Industry Leaders Worldwide
+            Trusted by Ethiopian Business Leaders
           </h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 opacity-60">
             <div className="flex items-center justify-center">
-              <div className="text-2xl font-bold text-muted-foreground">TechCorp</div>
+              <div className="text-2xl font-bold text-muted-foreground">EthioCorp</div>
             </div>
             <div className="flex items-center justify-center">
-              <div className="text-2xl font-bold text-muted-foreground">InnovateLab</div>
+              <div className="text-2xl font-bold text-muted-foreground">AddisLab</div>
             </div>
             <div className="flex items-center justify-center">
-              <div className="text-2xl font-bold text-muted-foreground">GrowthCo</div>
+              <div className="text-2xl font-bold text-muted-foreground">GrowthEt</div>
             </div>
             <div className="flex items-center justify-center">
               <div className="text-2xl font-bold text-muted-foreground">FutureTech</div>
@@ -162,7 +165,7 @@ const Index = () => {
           </div>
           <div className="mt-12">
             <Badge className="bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400 text-lg px-4 py-2">
-              Trusted by 10,000+ Businesses Globally
+              Planning to Reach 1 Million+ Customers in Ethiopia
             </Badge>
           </div>
         </div>
@@ -176,7 +179,7 @@ const Index = () => {
               What Our Clients Say
             </h2>
             <p className="text-lg text-blue-100 max-w-2xl mx-auto">
-              Don't just take our word for it. See what industry leaders are saying about UTOPIA Digital Solution.
+              Don't just take our word for it. See what Ethiopian business leaders are saying about UTOPIA Digital Solution.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -204,15 +207,17 @@ const Index = () => {
       <section className="py-20 bg-gray-900 dark:bg-slate-950">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            Ready to Transform Your Business?
+            Ready to Transform Your Ethiopian Business?
           </h2>
           <p className="text-xl text-gray-300 mb-8">
-            Join thousands of companies already using UTOPIA Digital Solution to achieve remarkable results.
+            Join thousands of Ethiopian companies already using UTOPIA Digital Solution to achieve remarkable results.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 text-lg">
-              Start Free Trial
-            </Button>
+            <Link to="/signup">
+              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 text-lg">
+                Start Free Trial
+              </Button>
+            </Link>
             <Link to="/contact">
               <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-gray-900 px-8 py-3 text-lg">
                 Contact Sales

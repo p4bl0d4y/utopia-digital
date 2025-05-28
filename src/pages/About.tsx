@@ -9,17 +9,17 @@ const About = () => {
     {
       icon: <Users className="h-8 w-8 text-blue-600 dark:text-blue-400" />,
       title: "Customer-Centric",
-      description: "Every decision we make is guided by our commitment to delivering exceptional value to our customers."
+      description: "Every decision we make is guided by our commitment to delivering exceptional value to Ethiopian businesses."
     },
     {
       icon: <Star className="h-8 w-8 text-blue-600 dark:text-blue-400" />,
       title: "Innovation First",
-      description: "We continuously push boundaries to create cutting-edge solutions that shape the future of business."
+      description: "We continuously push boundaries to create cutting-edge solutions that drive Ethiopia's digital transformation."
     },
     {
       icon: <Clock className="h-8 w-8 text-blue-600 dark:text-blue-400" />,
-      title: "Reliability",
-      description: "Our platform delivers consistent, dependable performance that businesses can trust and rely on."
+      title: "Digital Transformation",
+      description: "Our mission is to accelerate Ethiopia's digital transformation through innovative technology solutions."
     }
   ];
 
@@ -28,25 +28,25 @@ const About = () => {
       name: "Alex Thompson",
       role: "Chief Executive Officer",
       image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-      bio: "Visionary leader with 15+ years in enterprise software development and digital transformation."
+      bio: "Visionary leader with 15+ years in enterprise software development and Ethiopian market expertise."
     },
     {
       name: "Sarah Chen",
       role: "Chief Technology Officer",
       image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-      bio: "Technology innovator specializing in scalable cloud architectures and AI-driven solutions."
+      bio: "Technology innovator specializing in scalable solutions for emerging markets and digital transformation."
     },
     {
       name: "Marcus Rodriguez",
       role: "Head of Product",
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-      bio: "Product strategist focused on creating intuitive user experiences that drive business results."
+      bio: "Product strategist focused on creating solutions that address Ethiopian business challenges."
     },
     {
       name: "Emily Davis",
       role: "VP of Customer Success",
       image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-      bio: "Customer advocate ensuring every client achieves maximum value from our solutions."
+      bio: "Customer advocate ensuring every Ethiopian client achieves maximum value from our solutions."
     }
   ];
 
@@ -60,12 +60,12 @@ const About = () => {
               🏢 About UTOPIA Digital Solution
             </Badge>
             <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-              Building the Future of
-              <span className="block text-blue-600 dark:text-blue-400">Digital Business Solutions</span>
+              Driving Ethiopia's
+              <span className="block text-blue-600 dark:text-blue-400">Digital Transformation</span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              We're on a mission to empower businesses worldwide with innovative SaaS solutions 
-              that transform operations, drive growth, and unlock unlimited potential.
+              We're on a mission to accelerate Ethiopia's digital transformation through innovative SaaS solutions 
+              that revolutionize business management, boost exports, and modernize agriculture.
             </p>
           </div>
         </div>
@@ -80,19 +80,19 @@ const About = () => {
                 Our Story
               </h2>
               <p className="text-lg text-muted-foreground mb-6">
-                Founded in 2020, UTOPIA Digital Solution emerged from a simple yet powerful vision: 
-                to bridge the gap between complex business challenges and elegant technological solutions. 
-                Our founders, experienced leaders in enterprise software, recognized that businesses needed 
-                more than just tools—they needed intelligent platforms that could adapt and evolve.
+                Founded in 2025, UTOPIA Digital Solution emerged with a clear vision: to be the catalyst for 
+                Ethiopia's digital transformation. Recognizing the unique challenges and opportunities in the 
+                Ethiopian market, our founders set out to create technology solutions specifically designed 
+                for local businesses, exporters, and farmers.
               </p>
               <p className="text-lg text-muted-foreground mb-6">
-                Today, we serve over 10,000 businesses globally, from ambitious startups to Fortune 500 
-                enterprises. Our platform has processed millions of workflows, generated countless insights, 
-                and enabled organizations to achieve what they once thought impossible.
+                Starting with our flagship CRM solution, we expanded our portfolio to include Ethio-Trade Connect 
+                for boosting exports and Green Growth Ethiopia for modernizing agriculture. Each product addresses 
+                critical needs in Ethiopia's growing economy while supporting the country's digital transformation goals.
               </p>
               <p className="text-lg text-muted-foreground">
-                As we look to the future, we remain committed to innovation, customer success, and 
-                building solutions that don't just meet today's needs—but anticipate tomorrow's opportunities.
+                As we scale our operations, we remain committed to our mission of empowering Ethiopian businesses 
+                with world-class technology solutions that drive sustainable growth and economic development.
               </p>
             </div>
             <div>
@@ -114,9 +114,9 @@ const About = () => {
               <CardContent className="p-8">
                 <h3 className="text-2xl font-bold text-foreground mb-4">Our Mission</h3>
                 <p className="text-muted-foreground text-lg">
-                  To democratize access to powerful business technology by creating intuitive, 
-                  scalable SaaS solutions that enable organizations of all sizes to compete, 
-                  innovate, and thrive in the digital economy.
+                  To accelerate Ethiopia's digital transformation by providing innovative, locally-relevant 
+                  technology solutions that empower businesses, boost exports, and modernize agriculture 
+                  across the country.
                 </p>
               </CardContent>
             </Card>
@@ -125,9 +125,9 @@ const About = () => {
               <CardContent className="p-8">
                 <h3 className="text-2xl font-bold text-foreground mb-4">Our Vision</h3>
                 <p className="text-muted-foreground text-lg">
-                  To be the global leader in intelligent business platforms, where every organization 
-                  can harness the full potential of their data, processes, and people to create 
-                  extraordinary outcomes.
+                  To be the leading technology partner in Ethiopia's digital transformation journey, 
+                  enabling every business, exporter, and farmer to harness the power of technology 
+                  for sustainable growth and prosperity.
                 </p>
               </CardContent>
             </Card>
@@ -143,7 +143,7 @@ const About = () => {
               Our Core Values
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              These principles guide every decision we make and every solution we build.
+              These principles guide every decision we make and every solution we build for Ethiopia.
             </p>
           </div>
           
@@ -169,7 +169,7 @@ const About = () => {
               Meet Our Leadership Team
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Industry veterans and visionaries driving innovation in enterprise software.
+              Experienced leaders committed to driving Ethiopia's digital transformation.
             </p>
           </div>
           
@@ -197,20 +197,20 @@ const About = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
             <div>
-              <div className="text-4xl md:text-5xl font-bold text-white mb-2">10,000+</div>
-              <div className="text-blue-100">Active Customers</div>
+              <div className="text-4xl md:text-5xl font-bold text-white mb-2">1M+</div>
+              <div className="text-blue-100">Target Customers</div>
             </div>
             <div>
-              <div className="text-4xl md:text-5xl font-bold text-white mb-2">50M+</div>
-              <div className="text-blue-100">Workflows Processed</div>
+              <div className="text-4xl md:text-5xl font-bold text-white mb-2">3</div>
+              <div className="text-blue-100">Core Products</div>
             </div>
             <div>
               <div className="text-4xl md:text-5xl font-bold text-white mb-2">99.9%</div>
-              <div className="text-blue-100">Uptime Guarantee</div>
+              <div className="text-blue-100">Planned Uptime</div>
             </div>
             <div>
-              <div className="text-4xl md:text-5xl font-bold text-white mb-2">150+</div>
-              <div className="text-blue-100">Countries Served</div>
+              <div className="text-4xl md:text-5xl font-bold text-white mb-2">2025</div>
+              <div className="text-blue-100">Founded</div>
             </div>
           </div>
         </div>

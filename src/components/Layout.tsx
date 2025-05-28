@@ -68,9 +68,14 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                 </Link>
               ))}
               <ThemeToggle />
-              <Button className="bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white">
-                Get Started
-              </Button>
+              <Link to="/login" className="text-sm font-medium text-muted-foreground hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                Login
+              </Link>
+              <Link to="/signup">
+                <Button className="bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white">
+                  Get Started
+                </Button>
+              </Link>
             </div>
 
             {/* Mobile menu button */}
@@ -104,9 +109,14 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                     {item.name}
                   </Link>
                 ))}
-                <Button className="bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white w-full">
-                  Get Started
-                </Button>
+                <Link to="/login" className="text-sm font-medium text-muted-foreground hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                  Login
+                </Link>
+                <Link to="/signup">
+                  <Button className="bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white w-full">
+                    Get Started
+                  </Button>
+                </Link>
               </div>
             </div>
           )}
@@ -132,8 +142,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                 <span className="text-lg font-bold">UTOPIA Digital Solution</span>
               </div>
               <p className="text-gray-400 dark:text-gray-300 mb-4 max-w-md">
-                Empowering businesses with cutting-edge digital solutions that drive growth, 
-                efficiency, and innovation in the modern marketplace.
+                Driving Ethiopia's digital transformation through innovative CRM, export, and agricultural technology solutions.
               </p>
             </div>
             
@@ -159,7 +168,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
           
           <div className="border-t border-gray-800 dark:border-gray-700 mt-8 pt-8 text-center">
             <p className="text-gray-400 dark:text-gray-300">
-              © 2024 UTOPIA Digital Solution. All rights reserved.
+              © 2025 UTOPIA Digital Solution. All rights reserved.
             </p>
           </div>
         </div>
