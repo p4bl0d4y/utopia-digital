@@ -219,7 +219,7 @@ const Contact = () => {
             </Button>
           </div>
         </div>
-      </Section>
+      </section>
     </Layout>
   );
 };
