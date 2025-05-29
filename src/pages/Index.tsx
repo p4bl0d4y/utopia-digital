@@ -1,140 +1,162 @@
 
 import Layout from "@/components/Layout";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ArrowDown, Check, Star, Users, TrendingUp, BarChart3 } from "lucide-react";
+import { 
+  Users, 
+  BarChart3, 
+  Shield, 
+  Smartphone,
+  CheckCircle,
+  ArrowRight,
+  Star,
+  TrendingUp,
+  Target,
+  Clock
+} from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Index = () => {
   const features = [
     {
       icon: <Users className="h-8 w-8 text-blue-600 dark:text-blue-400" />,
-      title: "Customer Management",
-      description: "Centralize all customer information, interactions, and history in one comprehensive platform.",
-    },
-    {
-      icon: <TrendingUp className="h-8 w-8 text-blue-600 dark:text-blue-400" />,
-      title: "Sales Pipeline",
-      description: "Track leads through every stage of your sales process with automated workflow management.",
+      title: "Centralized Customer Data",
+      description: "Keep all customer information, interactions, and history in one secure, easily accessible location for your Ethiopian business."
     },
     {
       icon: <BarChart3 className="h-8 w-8 text-blue-600 dark:text-blue-400" />,
-      title: "Analytics & Reporting",
-      description: "Make data-driven decisions with comprehensive analytics and real-time performance reports.",
+      title: "Advanced Sales Analytics",
+      description: "Track sales performance, identify trends, and make data-driven decisions to boost revenue and growth."
     },
+    {
+      icon: <Target className="h-8 w-8 text-blue-600 dark:text-blue-400" />,
+      title: "Lead Management & Conversion",
+      description: "Capture, nurture, and convert leads more effectively with automated workflows and follow-up reminders."
+    },
+    {
+      icon: <Clock className="h-8 w-8 text-blue-600 dark:text-blue-400" />,
+      title: "Improved Customer Service",
+      description: "Respond faster to customer inquiries and provide personalized service with complete interaction history."
+    },
+    {
+      icon: <TrendingUp className="h-8 w-8 text-blue-600 dark:text-blue-400" />,
+      title: "Increased Sales Efficiency",
+      description: "Automate repetitive tasks, streamline sales processes, and focus your team on closing deals."
+    },
+    {
+      icon: <Shield className="h-8 w-8 text-blue-600 dark:text-blue-400" />,
+      title: "Better Customer Retention",
+      description: "Build stronger relationships with customers through personalized communication and proactive service."
+    }
   ];
 
-  const testimonials = [
+  const solutions = [
     {
-      name: "Sarah Johnson",
-      company: "TechCorp Inc.",
-      content: "UTOPIA Digital Solution transformed our customer management efficiency by 300%. The results were immediate and impressive.",
-      rating: 5,
+      title: "CRM Solution",
+      description: "Comprehensive customer relationship management for Ethiopian businesses",
+      icon: <Users className="h-12 w-12 text-blue-600 dark:text-blue-400" />,
+      color: "blue",
+      link: "/solutions/crm-solution"
     },
     {
-      name: "Michael Chen",
-      company: "Innovation Labs",
-      content: "The most intuitive and powerful CRM platform we've ever used. Our sales team productivity has never been higher.",
-      rating: 5,
+      title: "Ethio-Trade Connect",
+      description: "Boost Ethiopia's export power and connect to global markets",
+      icon: <BarChart3 className="h-12 w-12 text-red-600 dark:text-red-400" />,
+      color: "red",
+      link: "/solutions/ethio-trade-connect"
     },
     {
-      name: "Emily Rodriguez",
-      company: "Growth Dynamics",
-      content: "Outstanding support and incredible features. UTOPIA delivers exactly what modern businesses need for customer success.",
-      rating: 5,
-    },
+      title: "Green Growth Ethiopia",
+      description: "Modernize agriculture with smart farming technology",
+      icon: <Smartphone className="h-12 w-12 text-green-600 dark:text-green-400" />,
+      color: "green",
+      link: "/solutions/green-growth-ethiopia"
+    }
+  ];
+
+  const stats = [
+    { number: "1M+", label: "Planned to Reach Customers", sublabel: "Target market across Ethiopia" },
+    { number: "3", label: "Core Solutions", sublabel: "CRM, Export & Agriculture" },
+    { number: "99.9%", label: "Planned Uptime", sublabel: "Reliable service guarantee" },
+    { number: "2025", label: "Founded", sublabel: "Starting Ethiopia's digital transformation" }
   ];
 
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-600/10 via-purple-600/5 to-cyan-600/10"></div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="animate-fade-in">
-            <Badge className="mb-6 bg-blue-100 text-blue-800 hover:bg-blue-200 dark:bg-blue-900/30 dark:text-blue-400">
-              🚀 Now Available - Next-Gen Digital Solutions
-            </Badge>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6 leading-tight">
-              Transform Your Business with
-              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent block">
-                UTOPIA Digital Solution
-              </span>
-            </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
-              Empower your organization with cutting-edge CRM solutions designed to accelerate growth, 
-              streamline operations, and unlock unprecedented productivity in Ethiopia's digital transformation.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Link to="/signup">
-                <Button size="lg" className="bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white px-8 py-3 text-lg">
-                  Get Started
-                </Button>
-              </Link>
-              <Link to="/solutions">
-                <Button variant="outline" size="lg" className="border-blue-600 text-blue-600 hover:bg-blue-50 dark:border-blue-400 dark:text-blue-400 dark:hover:bg-blue-950 px-8 py-3 text-lg">
-                  Explore Solutions
-                </Button>
-              </Link>
-            </div>
-          </div>
-        </div>
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <ArrowDown className="h-6 w-6 text-muted-foreground" />
-        </div>
-      </section>
-
-      {/* Problem/Solution Section */}
-      <section className="py-20 bg-white dark:bg-slate-900">
+      <section className="relative py-20 bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-slate-900 dark:to-slate-800 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-                Solving CRM Challenges for Ethiopian Businesses
-              </h2>
-              <p className="text-lg text-muted-foreground mb-8">
-                Ethiopian businesses need more than just customer management tools—they need intelligent 
-                CRM platforms that understand local markets, support growth, and drive digital transformation 
-                across the country.
-              </p>
-              <div className="space-y-4">
-                {["Streamline customer relationships", "Boost sales performance", "Make data-driven decisions"].map((item, index) => (
-                  <div key={index} className="flex items-center space-x-3">
-                    <Check className="h-5 w-5 text-green-500 dark:text-green-400" />
-                    <span className="text-muted-foreground">{item}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className="relative">
-              <img 
-                src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
-                alt="Modern office collaboration" 
-                className="rounded-lg shadow-2xl"
-              />
+          <div className="text-center">
+            <Badge className="mb-6 bg-blue-100 text-blue-800 hover:bg-blue-200 dark:bg-blue-900/30 dark:text-blue-400">
+              🚀 Transforming Ethiopian Business
+            </Badge>
+            <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
+              UTOPIA Digital Solution
+              <span className="text-blue-600 dark:text-blue-400 block">for Ethiopia's Future</span>
+            </h1>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
+              Revolutionizing Ethiopian business through innovative SaaS solutions. 
+              Streamline operations, boost exports, and modernize agriculture with cutting-edge technology.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+              <Link to="/signup">
+                <Button size="lg" className="bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600">
+                  Get Started
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </Link>
+              <Link to="/contact">
+                <Button variant="outline" size="lg" className="border-blue-600 text-blue-600 hover:bg-blue-50 dark:border-blue-400 dark:text-blue-400 dark:hover:bg-blue-950">
+                  Schedule Demo
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Features Section */}
+      {/* Trusted Companies Section - Coming Soon */}
+      <section className="py-16 bg-white dark:bg-slate-900 relative">
+        <div className="absolute inset-0 bg-gray-500/20 backdrop-blur-sm flex items-center justify-center z-10">
+          <div className="text-center">
+            <Badge className="bg-yellow-100 text-yellow-800 text-lg px-6 py-2 dark:bg-yellow-900/30 dark:text-yellow-400">
+              🚧 Coming Soon
+            </Badge>
+            <p className="text-lg font-semibold text-foreground mt-2">Customer Testimonials</p>
+          </div>
+        </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center blur-sm">
+          <p className="text-muted-foreground mb-8">Planned to reach 1 million customers across Ethiopia</p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center opacity-50">
+            <div className="text-2xl font-bold text-foreground">Future Client 1</div>
+            <div className="text-2xl font-bold text-foreground">Future Client 2</div>
+            <div className="text-2xl font-bold text-foreground">Future Client 3</div>
+            <div className="text-2xl font-bold text-foreground">Future Client 4</div>
+          </div>
+        </div>
+      </section>
+
+      {/* Advantages of CRM Section */}
       <section className="py-20 bg-gray-50 dark:bg-slate-800/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Key Advantages of Using CRM Software
+              Advantages of Using CRM Software
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Experience the transformative power of professional customer relationship management designed for Ethiopian businesses.
+              Discover how Customer Relationship Management software can transform your Ethiopian business operations and drive sustainable growth.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((feature, index) => (
-              <Card key={index} className="border-0 shadow-lg dark:bg-slate-800 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                <CardContent className="p-8 text-center">
-                  <div className="mb-4 flex justify-center">{feature.icon}</div>
-                  <h3 className="text-xl font-semibold text-foreground mb-3">{feature.title}</h3>
+              <Card key={index} className="border-0 shadow-lg dark:bg-slate-800 hover:shadow-xl transition-all duration-300">
+                <CardHeader>
+                  <div className="mb-4">{feature.icon}</div>
+                  <CardTitle className="text-xl text-foreground">{feature.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
                   <p className="text-muted-foreground">{feature.description}</p>
                 </CardContent>
               </Card>
@@ -143,59 +165,36 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Trust Signals */}
-      <section className="py-16 bg-white dark:bg-slate-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h3 className="text-2xl font-semibold text-foreground mb-8">
-            Trusted by Ethiopian Business Leaders
-          </h3>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 opacity-60">
-            <div className="flex items-center justify-center">
-              <div className="text-2xl font-bold text-muted-foreground">EthioCorp</div>
-            </div>
-            <div className="flex items-center justify-center">
-              <div className="text-2xl font-bold text-muted-foreground">AddisLab</div>
-            </div>
-            <div className="flex items-center justify-center">
-              <div className="text-2xl font-bold text-muted-foreground">GrowthEt</div>
-            </div>
-            <div className="flex items-center justify-center">
-              <div className="text-2xl font-bold text-muted-foreground">FutureTech</div>
-            </div>
-          </div>
-          <div className="mt-12">
-            <Badge className="bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400 text-lg px-4 py-2">
-              Planning to Reach 1 Million+ Customers in Ethiopia
-            </Badge>
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials */}
-      <section className="py-20 bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-800 dark:to-purple-800">
+      {/* Solutions Section */}
+      <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              What Our Clients Say
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+              Comprehensive Business Solutions
             </h2>
-            <p className="text-lg text-blue-100 max-w-2xl mx-auto">
-              Don't just take our word for it. See what Ethiopian business leaders are saying about UTOPIA Digital Solution.
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Tailored technology solutions designed specifically for Ethiopian businesses, exporters, and farmers.
             </p>
           </div>
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <Card key={index} className="bg-white/10 backdrop-blur-md border-white/20 dark:bg-white/5">
-                <CardContent className="p-6">
-                  <div className="flex mb-4">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
-                    ))}
-                  </div>
-                  <p className="text-white mb-4">"{testimonial.content}"</p>
-                  <div>
-                    <div className="font-semibold text-white">{testimonial.name}</div>
-                    <div className="text-blue-100">{testimonial.company}</div>
-                  </div>
+            {solutions.map((solution, index) => (
+              <Card key={index} className="border-0 shadow-lg dark:bg-slate-800 hover:shadow-xl transition-all duration-300 group">
+                <CardContent className="p-8 text-center">
+                  <div className="mb-6">{solution.icon}</div>
+                  <h3 className="text-2xl font-bold text-foreground mb-4">{solution.title}</h3>
+                  <p className="text-muted-foreground mb-6">{solution.description}</p>
+                  <Link to={solution.link}>
+                    <Button 
+                      className={`${
+                        solution.color === 'blue' ? 'bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600' :
+                        solution.color === 'red' ? 'bg-red-600 hover:bg-red-700 dark:bg-red-500 dark:hover:bg-red-600' :
+                        'bg-green-600 hover:bg-green-700 dark:bg-green-500 dark:hover:bg-green-600'
+                      } text-white`}
+                    >
+                      Learn More
+                    </Button>
+                  </Link>
                 </CardContent>
               </Card>
             ))}
@@ -203,24 +202,39 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Final CTA */}
-      <section className="py-20 bg-gray-900 dark:bg-slate-950">
+      {/* Stats Section */}
+      <section className="py-20 bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-800 dark:to-purple-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+            {stats.map((stat, index) => (
+              <div key={index}>
+                <div className="text-4xl md:text-5xl font-bold text-white mb-2">{stat.number}</div>
+                <div className="text-blue-100 font-medium">{stat.label}</div>
+                <div className="text-blue-200 text-sm">{stat.sublabel}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 bg-white dark:bg-slate-900">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
             Ready to Transform Your Ethiopian Business?
           </h2>
-          <p className="text-xl text-gray-300 mb-8">
-            Join thousands of Ethiopian companies already using UTOPIA Digital Solution to achieve remarkable results.
+          <p className="text-xl text-muted-foreground mb-8">
+            Join the digital transformation revolution in Ethiopia. Start with our flagship CRM solution today.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/signup">
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 text-lg">
+              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 px-8 py-3 text-lg">
                 Start Free Trial
               </Button>
             </Link>
-            <Link to="/contact">
-              <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-gray-900 px-8 py-3 text-lg">
-                Contact Sales
+            <Link to="/solutions">
+              <Button variant="outline" size="lg" className="border-blue-600 text-blue-600 hover:bg-blue-50 dark:border-blue-400 dark:text-blue-400 dark:hover:bg-blue-950 px-8 py-3 text-lg">
+                View All Solutions
               </Button>
             </Link>
           </div>

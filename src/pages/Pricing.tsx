@@ -4,13 +4,14 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Check, Star } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Pricing = () => {
   const plans = [
     {
       name: "Starter",
-      price: "2,900",
-      period: " ETB/month",
+      price: "Contact Us",
+      period: "",
       description: "Perfect for small Ethiopian businesses getting started with CRM.",
       features: [
         "Up to 1,000 customer contacts",
@@ -21,13 +22,13 @@ const Pricing = () => {
         "Email support",
         "Data export capabilities"
       ],
-      cta: "Start Free Trial",
+      cta: "Contact Sales",
       popular: false
     },
     {
       name: "Professional",
-      price: "7,900",
-      period: " ETB/month",
+      price: "Contact Us",
+      period: "",
       description: "Ideal for growing Ethiopian businesses that need advanced CRM features.",
       features: [
         "Up to 10,000 customer contacts",
@@ -41,13 +42,13 @@ const Pricing = () => {
         "Lead scoring system",
         "Custom branding options"
       ],
-      cta: "Start Free Trial",
+      cta: "Contact Sales",
       popular: true
     },
     {
       name: "Enterprise",
-      price: "Custom",
-      period: " pricing",
+      price: "Contact Us",
+      period: "",
       description: "Comprehensive CRM solution for large Ethiopian organizations.",
       features: [
         "Unlimited customer contacts",
@@ -69,16 +70,16 @@ const Pricing = () => {
 
   const faqs = [
     {
-      question: "Can I switch between plans at any time?",
-      answer: "Yes, you can upgrade or downgrade your CRM plan at any time. Changes take effect immediately, and we'll prorate any billing adjustments in Ethiopian Birr."
+      question: "How do I get pricing information?",
+      answer: "Contact our sales team for customized pricing based on your specific business needs and requirements. We offer flexible pricing plans in Ethiopian Birr."
     },
     {
-      question: "What's included in the free trial?",
-      answer: "The free trial gives you full access to all Professional plan features for 14 days, with no payment required. Perfect for testing our CRM with your Ethiopian business needs."
+      question: "Do you offer free trials?",
+      answer: "Yes! We offer a 14-day free trial for all our CRM plans. Contact us to get started with your trial account."
     },
     {
-      question: "Do you offer annual payment discounts?",
-      answer: "Yes! Annual plans receive a 20% discount compared to monthly billing. Enterprise plans include custom pricing with additional discounts for Ethiopian businesses."
+      question: "What's included in the setup?",
+      answer: "All plans include full setup assistance, data migration support, and initial training for your team. Enterprise plans include dedicated onboarding specialists."
     },
     {
       question: "What kind of customer support do you provide?",
@@ -103,12 +104,12 @@ const Pricing = () => {
             💰 CRM Pricing
           </Badge>
           <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            Simple, Transparent CRM Pricing
-            <span className="block text-blue-600 dark:text-blue-400">for Ethiopian Businesses</span>
+            CRM Solutions for
+            <span className="block text-blue-600 dark:text-blue-400">Ethiopian Businesses</span>
           </h1>
           <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-            Choose the perfect CRM plan for your Ethiopian business. Start with our free trial and scale as you grow. 
-            Transparent pricing in Ethiopian Birr with no hidden fees.
+            Choose the perfect CRM plan for your Ethiopian business. Contact us for customized pricing 
+            and start your digital transformation journey today.
           </p>
         </div>
       </section>
@@ -133,7 +134,7 @@ const Pricing = () => {
                 <CardHeader className="text-center pb-4">
                   <CardTitle className="text-2xl font-bold text-foreground">{plan.name}</CardTitle>
                   <div className="mt-4">
-                    <span className="text-4xl md:text-5xl font-bold text-foreground">{plan.price}</span>
+                    <span className="text-3xl md:text-4xl font-bold text-foreground">{plan.price}</span>
                     <span className="text-muted-foreground ml-1">{plan.period}</span>
                   </div>
                   <p className="text-muted-foreground mt-4">{plan.description}</p>
@@ -149,16 +150,18 @@ const Pricing = () => {
                     ))}
                   </ul>
                   
-                  <Button 
-                    className={`w-full ${
-                      plan.popular 
-                        ? 'bg-blue-600 hover:bg-blue-700 text-white dark:bg-blue-500 dark:hover:bg-blue-600' 
-                        : 'bg-slate-900 hover:bg-slate-800 text-white dark:bg-slate-700 dark:hover:bg-slate-600'
-                    }`}
-                    size="lg"
-                  >
-                    {plan.cta}
-                  </Button>
+                  <Link to="/contact">
+                    <Button 
+                      className={`w-full ${
+                        plan.popular 
+                          ? 'bg-blue-600 hover:bg-blue-700 text-white dark:bg-blue-500 dark:hover:bg-blue-600' 
+                          : 'bg-slate-900 hover:bg-slate-800 text-white dark:bg-slate-700 dark:hover:bg-slate-600'
+                      }`}
+                      size="lg"
+                    >
+                      {plan.cta}
+                    </Button>
+                  </Link>
                 </CardContent>
               </Card>
             ))}
@@ -239,15 +242,19 @@ const Pricing = () => {
             Ready to Transform Your Ethiopian Business?
           </h2>
           <p className="text-xl text-blue-100 dark:text-blue-200 mb-8">
-            Join hundreds of Ethiopian businesses already using UTOPIA CRM to streamline operations and boost sales.
+            Contact us today to discuss your CRM needs and get customized pricing for your business.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-white text-blue-600 hover:bg-blue-50 px-8 py-3 text-lg dark:bg-slate-100 dark:text-blue-700 dark:hover:bg-slate-200">
-              Start Free Trial
-            </Button>
-            <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-blue-600 px-8 py-3 text-lg dark:border-slate-200 dark:hover:bg-slate-100 dark:hover:text-blue-700">
-              Contact Sales
-            </Button>
+            <Link to="/contact">
+              <Button size="lg" className="bg-white text-blue-600 hover:bg-blue-50 px-8 py-3 text-lg dark:bg-slate-100 dark:text-blue-700 dark:hover:bg-slate-200">
+                Contact Sales
+              </Button>
+            </Link>
+            <Link to="/schedule-demo">
+              <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-blue-600 px-8 py-3 text-lg dark:border-slate-200 dark:hover:bg-slate-100 dark:hover:text-blue-700">
+                Schedule Demo
+              </Button>
+            </Link>
           </div>
         </div>
       </section>

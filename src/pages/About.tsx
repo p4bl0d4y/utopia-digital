@@ -25,28 +25,22 @@ const About = () => {
 
   const team = [
     {
-      name: "Alex Thompson",
-      role: "Chief Executive Officer",
+      name: "Nathan Samuel",
+      role: "Founder & CEO",
       image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-      bio: "Visionary leader with 15+ years in enterprise software development and Ethiopian market expertise."
+      bio: "Visionary leader driving Ethiopia's digital transformation through innovative business solutions and strategic partnerships."
     },
     {
-      name: "Sarah Chen",
-      role: "Chief Technology Officer",
-      image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-      bio: "Technology innovator specializing in scalable solutions for emerging markets and digital transformation."
-    },
-    {
-      name: "Marcus Rodriguez",
-      role: "Head of Product",
+      name: "Eyosias Tefera",
+      role: "Co-founder & Lead Technician",
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-      bio: "Product strategist focused on creating solutions that address Ethiopian business challenges."
+      bio: "Technical expert specializing in scalable solutions for emerging markets and enterprise system architecture."
     },
     {
-      name: "Emily Davis",
-      role: "VP of Customer Success",
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-      bio: "Customer advocate ensuring every Ethiopian client achieves maximum value from our solutions."
+      name: "Naol Abera",
+      role: "Senior Software Developer (Agritech)",
+      image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+      bio: "Agricultural technology specialist focused on modernizing Ethiopian farming through innovative software solutions."
     }
   ];
 
@@ -86,7 +80,7 @@ const About = () => {
                 for local businesses, exporters, and farmers.
               </p>
               <p className="text-lg text-muted-foreground mb-6">
-                Starting with our flagship CRM solution, we expanded our portfolio to include Ethio-Trade Connect 
+                Starting with our flagship CRM solution, we plan to expand our portfolio to include Ethio-Trade Connect 
                 for boosting exports and Green Growth Ethiopia for modernizing agriculture. Each product addresses 
                 critical needs in Ethiopia's growing economy while supporting the country's digital transformation goals.
               </p>
@@ -173,7 +167,7 @@ const About = () => {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 justify-center">
             {team.map((member, index) => (
               <Card key={index} className="border-0 shadow-lg dark:bg-slate-800 text-center hover:shadow-xl transition-shadow">
                 <CardContent className="p-6">
@@ -198,15 +192,15 @@ const About = () => {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
             <div>
               <div className="text-4xl md:text-5xl font-bold text-white mb-2">1M+</div>
-              <div className="text-blue-100">Target Customers</div>
+              <div className="text-blue-100">Planned Target Customers</div>
             </div>
             <div>
               <div className="text-4xl md:text-5xl font-bold text-white mb-2">3</div>
-              <div className="text-blue-100">Core Products</div>
+              <div className="text-blue-100">Core Products in Development</div>
             </div>
             <div>
               <div className="text-4xl md:text-5xl font-bold text-white mb-2">99.9%</div>
-              <div className="text-blue-100">Planned Uptime</div>
+              <div className="text-blue-100">Planned Uptime Target</div>
             </div>
             <div>
               <div className="text-4xl md:text-5xl font-bold text-white mb-2">2025</div>

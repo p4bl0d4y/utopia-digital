@@ -13,21 +13,21 @@ const Contact = () => {
       icon: <Mail className="h-6 w-6 text-blue-600 dark:text-blue-400" />,
       title: "Email Us",
       description: "Send us an email and we'll respond within 24 hours",
-      contact: "hello@utopiadigital.com",
+      contact: "Coming Soon",
       action: "Send Email"
     },
     {
       icon: <Phone className="h-6 w-6 text-blue-600 dark:text-blue-400" />,
       title: "Call Us",
       description: "Speak directly with our team during business hours",
-      contact: "+251 11 XXX XXXX",
+      contact: "+251935050406",
       action: "Call Now"
     },
     {
       icon: <Users className="h-6 w-6 text-blue-600 dark:text-blue-400" />,
       title: "Sales Team",
       description: "Get in touch with our sales team for business solutions",
-      contact: "sales@utopiadigital.com",
+      contact: "Coming Soon",
       action: "Contact Sales"
     }
   ];
@@ -84,7 +84,7 @@ const Contact = () => {
               </h2>
               <p className="text-lg text-muted-foreground mb-8">
                 Fill out the form below and we'll get back to you as soon as possible. 
-                For urgent matters, please call us directly at our Addis Ababa office.
+                For urgent matters, please call us directly.
               </p>
               
               <div className="space-y-6">
@@ -167,9 +167,17 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Office Location */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Office Location - Coming Soon */}
+      <section className="py-20 relative">
+        <div className="absolute inset-0 bg-gray-500/20 backdrop-blur-sm flex items-center justify-center z-10">
+          <div className="text-center">
+            <Badge className="bg-yellow-100 text-yellow-800 text-lg px-6 py-2 dark:bg-yellow-900/30 dark:text-yellow-400">
+              🚧 Coming Soon
+            </Badge>
+            <p className="text-lg font-semibold text-foreground mt-2">Office Location</p>
+          </div>
+        </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 blur-sm">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
               Our Office Location
