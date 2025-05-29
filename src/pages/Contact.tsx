@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
 import { Mail, Phone, Users, Clock, MapPin } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Contact = () => {
   const contactMethods = [
@@ -219,12 +220,16 @@ const Contact = () => {
             Schedule a personalized demo and see how UTOPIA Digital Solution can help you achieve your business goals.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-white text-blue-600 hover:bg-blue-50 px-8 py-3 text-lg">
-              Schedule Demo
-            </Button>
-            <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-blue-600 px-8 py-3 text-lg">
-              View Solutions
-            </Button>
+            <Link to="/schedule-demo">
+              <Button size="lg" className="bg-white text-blue-600 hover:bg-blue-50 px-8 py-3 text-lg">
+                Schedule Demo
+              </Button>
+            </Link>
+            <Link to="/solutions">
+              <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-blue-600 px-8 py-3 text-lg">
+                View Solutions
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
