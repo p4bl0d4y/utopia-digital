@@ -54,8 +54,8 @@ const CrmSolution = () => {
   const plans = [
     {
       name: "Starter",
-      price: "2,900",
-      period: " ETB/month",
+      price: "Contact Us",
+      period: "",
       description: "Perfect for small businesses getting started with CRM.",
       features: [
         "Up to 1,000 contacts",
@@ -65,13 +65,13 @@ const CrmSolution = () => {
         "Basic reporting",
         "Email support"
       ],
-      cta: "Start Free Trial",
+      cta: "Contact Us",
       popular: false
     },
     {
       name: "Professional",
-      price: "7,900",
-      period: " ETB/month",
+      price: "Contact Us",
+      period: "",
       description: "Ideal for growing businesses that need advanced CRM features.",
       features: [
         "Up to 10,000 contacts",
@@ -83,13 +83,13 @@ const CrmSolution = () => {
         "API access",
         "Team collaboration tools"
       ],
-      cta: "Start Free Trial",
+      cta: "Contact Us",
       popular: true
     },
     {
       name: "Enterprise",
-      price: "Custom",
-      period: " pricing",
+      price: "Contact Us",
+      period: "",
       description: "Comprehensive CRM solution for large organizations.",
       features: [
         "Unlimited contacts",
@@ -101,23 +101,8 @@ const CrmSolution = () => {
         "Advanced security",
         "24/7 premium support"
       ],
-      cta: "Contact Sales",
+      cta: "Contact Us",
       popular: false
-    }
-  ];
-
-  const testimonials = [
-    {
-      name: "Abebe Tadesse",
-      company: "Ethiopian Trading Company",
-      content: "Our sales increased by 45% within 6 months of using UTOPIA CRM. The pipeline management is exceptional.",
-      rating: 5
-    },
-    {
-      name: "Meron Haile",
-      company: "Addis Tech Solutions",
-      content: "The best CRM solution for Ethiopian businesses. Customer support is outstanding and the features are exactly what we needed.",
-      rating: 5
     }
   ];
 
@@ -143,9 +128,11 @@ const CrmSolution = () => {
                 Watch Demo
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
-              <Button variant="outline" size="lg" className="border-blue-600 text-blue-600 hover:bg-blue-50 dark:border-blue-400 dark:text-blue-400 dark:hover:bg-blue-950">
-                Start Free Trial
-              </Button>
+              <Link to="/schedule-demo">
+                <Button variant="outline" size="lg" className="border-blue-600 text-blue-600 hover:bg-blue-50 dark:border-blue-400 dark:text-blue-400 dark:hover:bg-blue-950">
+                  Schedule Demo
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
@@ -226,16 +213,18 @@ const CrmSolution = () => {
                     ))}
                   </ul>
                   
-                  <Button 
-                    className={`w-full ${
-                      plan.popular 
-                        ? 'bg-blue-600 hover:bg-blue-700 text-white dark:bg-blue-500 dark:hover:bg-blue-600' 
-                        : 'bg-slate-900 hover:bg-slate-800 text-white dark:bg-slate-700 dark:hover:bg-slate-600'
-                    }`}
-                    size="lg"
-                  >
-                    {plan.cta}
-                  </Button>
+                  <Link to="/contact" className="block">
+                    <Button 
+                      className={`w-full ${
+                        plan.popular 
+                          ? 'bg-blue-600 hover:bg-blue-700 text-white dark:bg-blue-500 dark:hover:bg-blue-600' 
+                          : 'bg-slate-900 hover:bg-slate-800 text-white dark:bg-slate-700 dark:hover:bg-slate-600'
+                      }`}
+                      size="lg"
+                    >
+                      {plan.cta}
+                    </Button>
+                  </Link>
                 </CardContent>
               </Card>
             ))}
@@ -256,22 +245,47 @@ const CrmSolution = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <Card key={index} className="border-0 shadow-lg dark:bg-slate-800">
-                <CardContent className="p-8">
-                  <div className="flex mb-4">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
-                    ))}
-                  </div>
-                  <p className="text-muted-foreground mb-6 text-lg">"{testimonial.content}"</p>
-                  <div>
-                    <div className="font-semibold text-foreground">{testimonial.name}</div>
-                    <div className="text-blue-600 dark:text-blue-400">{testimonial.company}</div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+            <Card className="border-0 shadow-lg dark:bg-slate-800 relative">
+              <div className="absolute inset-0 bg-slate-100 dark:bg-slate-900/80 backdrop-blur-sm flex items-center justify-center rounded-lg">
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-muted-foreground mb-2">Coming Soon</div>
+                  <p className="text-muted-foreground">Customer testimonials will be available soon</p>
+                </div>
+              </div>
+              <CardContent className="p-8 opacity-30">
+                <div className="flex mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
+                  ))}
+                </div>
+                <p className="text-muted-foreground mb-6 text-lg">"Our sales increased significantly after implementing the CRM solution."</p>
+                <div>
+                  <div className="font-semibold text-foreground">Customer Name</div>
+                  <div className="text-blue-600 dark:text-blue-400">Company Name</div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="border-0 shadow-lg dark:bg-slate-800 relative">
+              <div className="absolute inset-0 bg-slate-100 dark:bg-slate-900/80 backdrop-blur-sm flex items-center justify-center rounded-lg">
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-muted-foreground mb-2">Coming Soon</div>
+                  <p className="text-muted-foreground">Customer testimonials will be available soon</p>
+                </div>
+              </div>
+              <CardContent className="p-8 opacity-30">
+                <div className="flex mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
+                  ))}
+                </div>
+                <p className="text-muted-foreground mb-6 text-lg">"The customer support is outstanding and features are exactly what we needed."</p>
+                <div>
+                  <div className="font-semibold text-foreground">Customer Name</div>
+                  <div className="text-blue-600 dark:text-blue-400">Company Name</div>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
@@ -286,12 +300,16 @@ const CrmSolution = () => {
             Join hundreds of Ethiopian businesses already using our CRM to boost sales and improve customer satisfaction.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" variant="secondary" className="bg-white text-blue-600 hover:bg-gray-100">
-              Start Free Trial
-            </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600">
-              Schedule Demo
-            </Button>
+            <Link to="/contact">
+              <Button size="lg" variant="secondary" className="bg-white text-blue-600 hover:bg-gray-100">
+                Contact Us
+              </Button>
+            </Link>
+            <Link to="/schedule-demo">
+              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600">
+                Schedule Demo
+              </Button>
+            </Link>
           </div>
         </div>
       </section>

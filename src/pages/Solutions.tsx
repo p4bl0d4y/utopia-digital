@@ -21,7 +21,8 @@ const Solutions = () => {
       icon: Users,
       features: ["Customer Management", "Sales Pipeline", "Analytics Dashboard", "Team Collaboration"],
       category: "Business Management",
-      slug: "crm-solution"
+      slug: "crm-solution",
+      status: "available"
     },
     {
       id: 2,
@@ -30,7 +31,8 @@ const Solutions = () => {
       icon: Globe2,
       features: ["Export Management", "Trade Analytics", "Global Marketplace", "Foreign Exchange Tracking"],
       category: "Trade & Export",
-      slug: "ethio-trade-connect"
+      slug: "ethio-trade-connect",
+      status: "progress"
     },
     {
       id: 3,
@@ -39,7 +41,8 @@ const Solutions = () => {
       icon: Sprout,
       features: ["Smart Farming Tools", "Crop Management", "Weather Analytics", "Market Access"],
       category: "Agriculture Tech",
-      slug: "green-growth-ethiopia"
+      slug: "green-growth-ethiopia",
+      status: "progress"
     }
   ];
 
@@ -61,9 +64,11 @@ const Solutions = () => {
                 Explore Our Products
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
-              <Button variant="outline" size="lg" className="border-blue-600 text-blue-600 hover:bg-blue-50 dark:border-blue-400 dark:text-blue-400 dark:hover:bg-blue-950">
-                Schedule Demo
-              </Button>
+              <Link to="/schedule-demo">
+                <Button variant="outline" size="lg" className="border-blue-600 text-blue-600 hover:bg-blue-50 dark:border-blue-400 dark:text-blue-400 dark:hover:bg-blue-950">
+                  Schedule Demo
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
@@ -92,8 +97,11 @@ const Solutions = () => {
                       <div className="p-3 bg-blue-100 dark:bg-blue-900/30 rounded-lg group-hover:bg-blue-200 dark:group-hover:bg-blue-800/40 transition-colors">
                         <IconComponent className="h-6 w-6 text-blue-600 dark:text-blue-400" />
                       </div>
-                      <Badge variant="secondary" className="dark:bg-slate-700 dark:text-slate-300">
-                        {solution.category}
+                      <Badge variant={solution.status === 'available' ? 'default' : 'secondary'} 
+                             className={`dark:bg-slate-700 dark:text-slate-300 ${
+                               solution.status === 'progress' ? 'bg-orange-100 text-orange-800 dark:bg-orange-900/30 dark:text-orange-400' : ''
+                             }`}>
+                        {solution.status === 'available' ? solution.category : 'On Progress'}
                       </Badge>
                     </div>
                     <CardTitle className="text-xl font-bold text-foreground group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
@@ -119,7 +127,7 @@ const Solutions = () => {
                         className="flex-1 bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600"
                         onClick={() => window.open(`/demos/${solution.slug}`, '_blank')}
                       >
-                        Watch Demo
+                        {solution.status === 'available' ? 'Watch Demo' : 'Demo Coming Soon'}
                       </Button>
                       <Link to={`/solutions/${solution.slug}`} className="flex-1">
                         <Button variant="outline" className="w-full border-blue-600 text-blue-600 hover:bg-blue-50 dark:border-blue-400 dark:text-blue-400 dark:hover:bg-blue-950">
@@ -145,12 +153,16 @@ const Solutions = () => {
             Join us in revolutionizing business management, boosting exports, and modernizing agriculture in Ethiopia.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" variant="secondary" className="bg-white text-blue-600 hover:bg-gray-100">
-              Get Started Today
-            </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600">
-              Contact Sales
-            </Button>
+            <Link to="/contact">
+              <Button size="lg" variant="secondary" className="bg-white text-blue-600 hover:bg-gray-100">
+                Get Started Today
+              </Button>
+            </Link>
+            <Link to="/contact">
+              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600">
+                Contact Sales
+              </Button>
+            </Link>
           </div>
         </div>
       </section>

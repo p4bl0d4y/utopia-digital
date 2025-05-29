@@ -60,41 +60,26 @@ const EthioTradeConnect = () => {
     "Support sustainable economic growth"
   ];
 
-  const testimonials = [
-    {
-      name: "Dawit Bekele",
-      company: "Ethiopian Coffee Exporters Union",
-      content: "Ethio-Trade Connect has revolutionized how we connect with international coffee buyers. Our export volume increased by 60% in the first year.",
-      rating: 5
-    },
-    {
-      name: "Hanan Ahmed",
-      company: "Leather Products Export Company",
-      content: "The platform's market intelligence helped us identify new opportunities in European markets. Exceptional support for Ethiopian exporters.",
-      rating: 5
-    }
-  ];
-
   return (
     <Layout>
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-red-50 to-orange-100 dark:from-slate-900 dark:to-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <Badge className="mb-6 bg-red-100 text-red-800 hover:bg-red-200 dark:bg-red-900/30 dark:text-red-400">
-              🌍 Ethio-Trade Connect
+            <Badge className="mb-6 bg-orange-100 text-orange-800 hover:bg-orange-200 dark:bg-orange-900/30 dark:text-orange-400">
+              🚧 On Progress - Ethio-Trade Connect
             </Badge>
             <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
               Boosting Ethiopia's
               <span className="text-red-600 dark:text-red-400 block">Export Power</span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-              Revolutionary platform designed to increase Ethiopia's export capabilities, strengthen foreign 
+              Revolutionary platform currently in development to increase Ethiopia's export capabilities, strengthen foreign 
               exchange earnings, and connect Ethiopian businesses to global markets.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="bg-red-600 hover:bg-red-700 dark:bg-red-500 dark:hover:bg-red-600 text-white">
-                Watch Demo
+                Watch Demo (Coming Soon)
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
               <Button variant="outline" size="lg" className="border-red-600 text-red-600 hover:bg-red-50 dark:border-red-400 dark:text-red-400 dark:hover:bg-red-950">
@@ -113,7 +98,7 @@ const EthioTradeConnect = () => {
               Comprehensive Export Management Platform
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Everything Ethiopian exporters need to access global markets and maximize their export potential.
+              Everything Ethiopian exporters will need to access global markets and maximize their export potential.
             </p>
           </div>
 
@@ -144,7 +129,7 @@ const EthioTradeConnect = () => {
                 Transforming Ethiopia's Export Economy
               </h2>
               <p className="text-lg text-muted-foreground mb-8">
-                Our platform is designed to significantly boost Ethiopia's export capabilities and strengthen 
+                Our platform is being designed to significantly boost Ethiopia's export capabilities and strengthen 
                 the country's foreign exchange earnings through innovative technology and global market access.
               </p>
               <div className="space-y-4">
@@ -176,8 +161,8 @@ const EthioTradeConnect = () => {
             Custom Solutions for Export Growth
           </h2>
           <p className="text-xl text-muted-foreground mb-12 max-w-2xl mx-auto">
-            Our Ethio-Trade Connect platform offers tailored solutions based on your export volume, 
-            target markets, and business requirements. Contact us for customized pricing.
+            Our Ethio-Trade Connect platform will offer tailored solutions based on your export volume, 
+            target markets, and business requirements. Contact us for more information.
           </p>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
@@ -186,9 +171,9 @@ const EthioTradeConnect = () => {
                 <Mail className="h-12 w-12 text-red-600 dark:text-red-400 mx-auto mb-4" />
                 <h3 className="text-xl font-semibold text-foreground mb-2">Email Our Sales Team</h3>
                 <p className="text-muted-foreground mb-4">Get detailed information about our export solutions</p>
-                <p className="font-semibold text-foreground mb-4">exports@utopiadigital.com</p>
+                <p className="font-semibold text-foreground mb-4">Coming Soon</p>
                 <Button className="bg-red-600 hover:bg-red-700 dark:bg-red-500 dark:hover:bg-red-600 text-white">
-                  Send Email
+                  Coming Soon
                 </Button>
               </CardContent>
             </Card>
@@ -198,7 +183,7 @@ const EthioTradeConnect = () => {
                 <Phone className="h-12 w-12 text-red-600 dark:text-red-400 mx-auto mb-4" />
                 <h3 className="text-xl font-semibold text-foreground mb-2">Schedule a Call</h3>
                 <p className="text-muted-foreground mb-4">Speak directly with our export specialists</p>
-                <p className="font-semibold text-foreground mb-4">+251 11 XXX XXXX</p>
+                <p className="font-semibold text-foreground mb-4">+251935050406</p>
                 <Button className="bg-red-600 hover:bg-red-700 dark:bg-red-500 dark:hover:bg-red-600 text-white">
                   Schedule Call
                 </Button>
@@ -216,27 +201,52 @@ const EthioTradeConnect = () => {
               Success Stories from Ethiopian Exporters
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              See how Ethio-Trade Connect is helping Ethiopian businesses reach global markets.
+              Customer testimonials will be available once the platform launches.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <Card key={index} className="border-0 shadow-lg dark:bg-slate-800">
-                <CardContent className="p-8">
-                  <div className="flex mb-4">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
-                    ))}
-                  </div>
-                  <p className="text-muted-foreground mb-6 text-lg">"{testimonial.content}"</p>
-                  <div>
-                    <div className="font-semibold text-foreground">{testimonial.name}</div>
-                    <div className="text-red-600 dark:text-red-400">{testimonial.company}</div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+            <Card className="border-0 shadow-lg dark:bg-slate-800 relative">
+              <div className="absolute inset-0 bg-slate-100 dark:bg-slate-900/80 backdrop-blur-sm flex items-center justify-center rounded-lg">
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-muted-foreground mb-2">Coming Soon</div>
+                  <p className="text-muted-foreground">Customer testimonials will be available soon</p>
+                </div>
+              </div>
+              <CardContent className="p-8 opacity-30">
+                <div className="flex mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
+                  ))}
+                </div>
+                <p className="text-muted-foreground mb-6 text-lg">"This platform revolutionized how we connect with international buyers."</p>
+                <div>
+                  <div className="font-semibold text-foreground">Customer Name</div>
+                  <div className="text-red-600 dark:text-red-400">Export Company</div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="border-0 shadow-lg dark:bg-slate-800 relative">
+              <div className="absolute inset-0 bg-slate-100 dark:bg-slate-900/80 backdrop-blur-sm flex items-center justify-center rounded-lg">
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-muted-foreground mb-2">Coming Soon</div>
+                  <p className="text-muted-foreground">Customer testimonials will be available soon</p>
+                </div>
+              </div>
+              <CardContent className="p-8 opacity-30">
+                <div className="flex mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
+                  ))}
+                </div>
+                <p className="text-muted-foreground mb-6 text-lg">"The market intelligence helped us identify new opportunities in European markets."</p>
+                <div>
+                  <div className="font-semibold text-foreground">Customer Name</div>
+                  <div className="text-red-600 dark:text-red-400">Export Company</div>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
@@ -251,11 +261,13 @@ const EthioTradeConnect = () => {
             Join the revolution in Ethiopian export trade. Connect with global markets and maximize your export potential.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" variant="secondary" className="bg-white text-red-600 hover:bg-gray-100">
-              Contact Sales
-            </Button>
+            <Link to="/contact">
+              <Button size="lg" variant="secondary" className="bg-white text-red-600 hover:bg-gray-100">
+                Contact Sales
+              </Button>
+            </Link>
             <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-red-600">
-              Watch Demo
+              Watch Demo (Coming Soon)
             </Button>
           </div>
         </div>

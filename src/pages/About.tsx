@@ -27,19 +27,19 @@ const About = () => {
     {
       name: "Nathan Samuel",
       role: "Founder & CEO",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+      image: "/lovable-uploads/b7686cea-fff3-44ab-99ed-9b6ff25e9d4d.png",
       bio: "Visionary leader driving Ethiopia's digital transformation through innovative business solutions and strategic partnerships."
     },
     {
       name: "Eyosias Tefera",
       role: "Co-founder & Lead Technician",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+      image: "/lovable-uploads/f35217e1-c1e0-40fd-bab9-668400c922a2.png",
       bio: "Technical expert specializing in scalable solutions for emerging markets and enterprise system architecture."
     },
     {
       name: "Naol Abera",
       role: "Senior Software Developer (Agritech)",
-      image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+      image: "/lovable-uploads/b7686cea-fff3-44ab-99ed-9b6ff25e9d4d.png",
       bio: "Agricultural technology specialist focused on modernizing Ethiopian farming through innovative software solutions."
     }
   ];

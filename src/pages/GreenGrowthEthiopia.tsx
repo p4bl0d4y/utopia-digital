@@ -60,41 +60,26 @@ const GreenGrowthEthiopia = () => {
     "Reduce agricultural waste and losses"
   ];
 
-  const testimonials = [
-    {
-      name: "Fikadu Worku",
-      company: "Oromia Regional Farmers Cooperative",
-      content: "Green Growth Ethiopia has transformed how we manage our farms. Our wheat yield increased by 35% using their smart farming recommendations.",
-      rating: 5
-    },
-    {
-      name: "Almaz Tesfaye",
-      company: "Amhara Agricultural Development",
-      content: "The weather analytics feature helped us prevent crop losses during unexpected weather changes. This platform is essential for modern Ethiopian agriculture.",
-      rating: 5
-    }
-  ];
-
   return (
     <Layout>
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-green-50 to-emerald-100 dark:from-slate-900 dark:to-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <Badge className="mb-6 bg-green-100 text-green-800 hover:bg-green-200 dark:bg-green-900/30 dark:text-green-400">
-              🌱 Green Growth Ethiopia
+            <Badge className="mb-6 bg-orange-100 text-orange-800 hover:bg-orange-200 dark:bg-orange-900/30 dark:text-orange-400">
+              🚧 On Progress - Green Growth Ethiopia
             </Badge>
             <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
               Modernizing Ethiopia's
               <span className="text-green-600 dark:text-green-400 block">Agriculture Sector</span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-              Innovative agricultural technology platform designed to increase productivity, modernize farming 
+              Innovative agricultural technology platform currently in development to increase productivity, modernize farming 
               practices, and support sustainable agricultural development across Ethiopia.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="bg-green-600 hover:bg-green-700 dark:bg-green-500 dark:hover:bg-green-600 text-white">
-                Watch Demo
+                Watch Demo (Coming Soon)
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
               <Button variant="outline" size="lg" className="border-green-600 text-green-600 hover:bg-green-50 dark:border-green-400 dark:text-green-400 dark:hover:bg-green-950">
@@ -113,7 +98,7 @@ const GreenGrowthEthiopia = () => {
               Comprehensive Agricultural Technology Platform
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Everything Ethiopian farmers need to modernize their practices and maximize agricultural productivity.
+              Everything Ethiopian farmers will need to modernize their practices and maximize agricultural productivity.
             </p>
           </div>
 
@@ -144,7 +129,7 @@ const GreenGrowthEthiopia = () => {
                 Transforming Ethiopian Agriculture
               </h2>
               <p className="text-lg text-muted-foreground mb-8">
-                Our platform combines traditional Ethiopian farming knowledge with modern technology to create 
+                Our platform will combine traditional Ethiopian farming knowledge with modern technology to create 
                 sustainable agricultural solutions that improve food security and farmer livelihoods.
               </p>
               <div className="space-y-4">
@@ -176,8 +161,8 @@ const GreenGrowthEthiopia = () => {
             Custom Solutions for Agricultural Development
           </h2>
           <p className="text-xl text-muted-foreground mb-12 max-w-2xl mx-auto">
-            Green Growth Ethiopia offers tailored agricultural technology solutions based on farm size, 
-            crop types, and regional requirements. Contact us for customized pricing and implementation.
+            Green Growth Ethiopia will offer tailored agricultural technology solutions based on farm size, 
+            crop types, and regional requirements. Contact us for more information.
           </p>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
@@ -186,9 +171,9 @@ const GreenGrowthEthiopia = () => {
                 <Mail className="h-12 w-12 text-green-600 dark:text-green-400 mx-auto mb-4" />
                 <h3 className="text-xl font-semibold text-foreground mb-2">Email Our Agriculture Team</h3>
                 <p className="text-muted-foreground mb-4">Get detailed information about our agricultural solutions</p>
-                <p className="font-semibold text-foreground mb-4">agriculture@utopiadigital.com</p>
+                <p className="font-semibold text-foreground mb-4">Coming Soon</p>
                 <Button className="bg-green-600 hover:bg-green-700 dark:bg-green-500 dark:hover:bg-green-600 text-white">
-                  Send Email
+                  Coming Soon
                 </Button>
               </CardContent>
             </Card>
@@ -198,7 +183,7 @@ const GreenGrowthEthiopia = () => {
                 <Phone className="h-12 w-12 text-green-600 dark:text-green-400 mx-auto mb-4" />
                 <h3 className="text-xl font-semibold text-foreground mb-2">Schedule a Consultation</h3>
                 <p className="text-muted-foreground mb-4">Speak with our agricultural technology specialists</p>
-                <p className="font-semibold text-foreground mb-4">+251 11 XXX XXXX</p>
+                <p className="font-semibold text-foreground mb-4">+251935050406</p>
                 <Button className="bg-green-600 hover:bg-green-700 dark:bg-green-500 dark:hover:bg-green-600 text-white">
                   Schedule Call
                 </Button>
@@ -216,27 +201,52 @@ const GreenGrowthEthiopia = () => {
               Success Stories from Ethiopian Farmers
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              See how Green Growth Ethiopia is helping farmers across the country improve their productivity.
+              Customer testimonials will be available once the platform launches.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <Card key={index} className="border-0 shadow-lg dark:bg-slate-800">
-                <CardContent className="p-8">
-                  <div className="flex mb-4">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
-                    ))}
-                  </div>
-                  <p className="text-muted-foreground mb-6 text-lg">"{testimonial.content}"</p>
-                  <div>
-                    <div className="font-semibold text-foreground">{testimonial.name}</div>
-                    <div className="text-green-600 dark:text-green-400">{testimonial.company}</div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+            <Card className="border-0 shadow-lg dark:bg-slate-800 relative">
+              <div className="absolute inset-0 bg-slate-100 dark:bg-slate-900/80 backdrop-blur-sm flex items-center justify-center rounded-lg">
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-muted-foreground mb-2">Coming Soon</div>
+                  <p className="text-muted-foreground">Customer testimonials will be available soon</p>
+                </div>
+              </div>
+              <CardContent className="p-8 opacity-30">
+                <div className="flex mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
+                  ))}
+                </div>
+                <p className="text-muted-foreground mb-6 text-lg">"This platform transformed how we manage our farms."</p>
+                <div>
+                  <div className="font-semibold text-foreground">Farmer Name</div>
+                  <div className="text-green-600 dark:text-green-400">Agricultural Cooperative</div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="border-0 shadow-lg dark:bg-slate-800 relative">
+              <div className="absolute inset-0 bg-slate-100 dark:bg-slate-900/80 backdrop-blur-sm flex items-center justify-center rounded-lg">
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-muted-foreground mb-2">Coming Soon</div>
+                  <p className="text-muted-foreground">Customer testimonials will be available soon</p>
+                </div>
+              </div>
+              <CardContent className="p-8 opacity-30">
+                <div className="flex mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
+                  ))}
+                </div>
+                <p className="text-muted-foreground mb-6 text-lg">"The weather analytics feature helped us prevent crop losses."</p>
+                <div>
+                  <div className="font-semibold text-foreground">Farmer Name</div>
+                  <div className="text-green-600 dark:text-green-400">Agricultural Development</div>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
@@ -251,11 +261,13 @@ const GreenGrowthEthiopia = () => {
             Join the agricultural revolution in Ethiopia. Transform your farming practices with cutting-edge technology.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" variant="secondary" className="bg-white text-green-600 hover:bg-gray-100">
-              Contact Sales
-            </Button>
+            <Link to="/contact">
+              <Button size="lg" variant="secondary" className="bg-white text-green-600 hover:bg-gray-100">
+                Contact Sales
+              </Button>
+            </Link>
             <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-green-600">
-              Watch Demo
+              Watch Demo (Coming Soon)
             </Button>
           </div>
         </div>
