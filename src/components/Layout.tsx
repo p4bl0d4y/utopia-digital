@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -43,7 +42,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
             {/* Logo */}
             <Link to="/" className="flex items-center space-x-3">
               <img 
-                src="/lovable-uploads/b7686cea-fff3-44ab-99ed-9b6ff25e9d4d.png" 
+                src="/lovable-uploads/461d6d50-2f3d-49e1-b6b0-f49f93ded69e.png" 
                 alt="UTOPIA Digital Solution" 
                 className="h-10 w-auto"
               />
@@ -68,12 +67,9 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                 </Link>
               ))}
               <ThemeToggle />
-              <Link to="/login" className="text-sm font-medium text-muted-foreground hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-                Login
-              </Link>
               <Link to="/signup">
                 <Button className="bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white">
-                  Get Started
+                  Submit Info
                 </Button>
               </Link>
             </div>
@@ -109,12 +105,9 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                     {item.name}
                   </Link>
                 ))}
-                <Link to="/login" className="text-sm font-medium text-muted-foreground hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-                  Login
-                </Link>
                 <Link to="/signup">
                   <Button className="bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white w-full">
-                    Get Started
+                    Submit Info
                   </Button>
                 </Link>
               </div>
