@@ -84,8 +84,8 @@ const CrmSolution = () => {
         if (demoWindow && !demoWindow.closed) {
           // Note: This may not work due to cross-origin restrictions
           const demoDoc = demoWindow.document;
-          const emailField = demoDoc.querySelector('input[type="email"], input[placeholder*="Email"]');
-          const passwordField = demoDoc.querySelector('input[type="password"], input[placeholder*="Password"]');
+          const emailField = demoDoc.querySelector('input[type="email"], input[placeholder*="Email"]') as HTMLInputElement;
+          const passwordField = demoDoc.querySelector('input[type="password"], input[placeholder*="Password"]') as HTMLInputElement;
           
           if (emailField) emailField.value = "guest@example.com";
           if (passwordField) passwordField.value = "guest123";
