@@ -5,16 +5,46 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { Textarea } from "@/components/ui/textarea";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 
 const Signup = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [selectedSolution, setSelectedSolution] = useState("");
   const { toast } = useToast();
+
+  const productSolutions = [
+    { value: "crm-solution", label: "CRM Solution - Customer Management System" },
+    { value: "ethio-trade-connect", label: "Ethio-Trade Connect - Export & Trade Platform" },
+    { value: "green-growth-ethiopia", label: "Green Growth Ethiopia - Agriculture Technology" },
+    { value: "multiple", label: "Multiple Solutions" },
+    { value: "not-sure", label: "Not Sure - Need Consultation" }
+  ];
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+
+    const formData = new FormData(e.target as HTMLFormElement);
+    const submissionData = {
+      firstName: formData.get('firstName'),
+      lastName: formData.get('lastName'),
+      email: formData.get('email'),
+      phone: formData.get('phone'),
+      company: formData.get('company'),
+      position: formData.get('position'),
+      businessType: formData.get('businessType'),
+      message: formData.get('message'),
+      selectedSolution: selectedSolution,
+      submissionType: 'contact_info',
+      timestamp: new Date().toISOString()
+    };
+
+    console.log('Submission data:', submissionData);
+    
+    // TODO: Replace with Firebase integration
+    // Example: await addDoc(collection(db, "submissions"), submissionData);
 
     // Simulate API call
     await new Promise(resolve => setTimeout(resolve, 2000));
@@ -29,6 +59,7 @@ const Signup = () => {
     // Reset form
     const form = e.target as HTMLFormElement;
     form.reset();
+    setSelectedSolution("");
   };
 
   return (
@@ -58,13 +89,13 @@ const Signup = () => {
                     <label htmlFor="firstName" className="block text-sm font-medium text-foreground mb-2">
                       First Name *
                     </label>
-                    <Input id="firstName" required />
+                    <Input id="firstName" name="firstName" required />
                   </div>
                   <div>
                     <label htmlFor="lastName" className="block text-sm font-medium text-foreground mb-2">
                       Last Name *
                     </label>
-                    <Input id="lastName" required />
+                    <Input id="lastName" name="lastName" required />
                   </div>
                 </div>
 
@@ -72,35 +103,53 @@ const Signup = () => {
                   <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
                     Email Address *
                   </label>
-                  <Input id="email" type="email" required />
+                  <Input id="email" name="email" type="email" required />
                 </div>
 
                 <div>
                   <label htmlFor="phone" className="block text-sm font-medium text-foreground mb-2">
                     Phone Number
                   </label>
-                  <Input id="phone" type="tel" />
+                  <Input id="phone" name="phone" type="tel" />
                 </div>
 
                 <div>
                   <label htmlFor="company" className="block text-sm font-medium text-foreground mb-2">
                     Company Name *
                   </label>
-                  <Input id="company" required />
+                  <Input id="company" name="company" required />
                 </div>
 
                 <div>
                   <label htmlFor="position" className="block text-sm font-medium text-foreground mb-2">
                     Your Position
                   </label>
-                  <Input id="position" />
+                  <Input id="position" name="position" />
                 </div>
 
                 <div>
                   <label htmlFor="businessType" className="block text-sm font-medium text-foreground mb-2">
                     Business Type
                   </label>
-                  <Input id="businessType" placeholder="e.g., Manufacturing, Agriculture, Trading" />
+                  <Input id="businessType" name="businessType" placeholder="e.g., Manufacturing, Agriculture, Trading" />
+                </div>
+
+                <div>
+                  <label htmlFor="productSolution" className="block text-sm font-medium text-foreground mb-2">
+                    Which solution interests you most? *
+                  </label>
+                  <Select value={selectedSolution} onValueChange={setSelectedSolution} required>
+                    <SelectTrigger>
+                      <SelectValue placeholder="Select a product solution" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {productSolutions.map((solution) => (
+                        <SelectItem key={solution.value} value={solution.value}>
+                          {solution.label}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
                 </div>
 
                 <div>
@@ -109,6 +158,7 @@ const Signup = () => {
                   </label>
                   <Textarea 
                     id="message" 
+                    name="message"
                     className="min-h-[100px]"
                     placeholder="What challenges are you facing? What solutions are you looking for?"
                   />
