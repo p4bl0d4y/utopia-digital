@@ -12,7 +12,7 @@ const BlogPost = () => {
   const blogPosts = {
     "future-of-business-automation": {
       title: "The Future of Business Automation: AI-Driven Workflows in 2024",
-      author: "Sarah Chen",
+      author: "Nathan Samuel",
       date: "March 15, 2024",
       readTime: "8 min read",
       category: "AI & Automation",
@@ -40,7 +40,7 @@ const BlogPost = () => {
     },
     "saas-solutions-reduce-costs": {
       title: "5 Ways SaaS Solutions Can Reduce Operational Costs",
-      author: "Marcus Rodriguez",
+      author: "Eyosias Tefera",
       date: "March 12, 2024",
       readTime: "6 min read",
       category: "Cost Optimization",
@@ -66,7 +66,7 @@ const BlogPost = () => {
     },
     "data-security-best-practices": {
       title: "Data Security Best Practices for Modern Businesses",
-      author: "Alex Thompson",
+      author: "Nathan Samuel",
       date: "March 10, 2024",
       readTime: "7 min read",
       category: "Security",
@@ -95,7 +95,7 @@ const BlogPost = () => {
     },
     "crm-implementation-guide": {
       title: "The Complete Guide to CRM Implementation for Ethiopian Businesses",
-      author: "Sarah Johnson",
+      author: "Nathan Samuel",
       date: "December 15, 2024",
       readTime: "8 min read",
       category: "CRM Solutions",
@@ -126,7 +126,7 @@ const BlogPost = () => {
     },
     "export-opportunities-ethiopia": {
       title: "Unlocking Export Opportunities for Ethiopian Businesses in 2024",
-      author: "Michael Chen",
+      author: "Eyosias Tefera",
       date: "December 10, 2024",
       readTime: "6 min read",
       category: "Export & Trade",
@@ -154,7 +154,7 @@ const BlogPost = () => {
     },
     "digital-agriculture-trends": {
       title: "Digital Agriculture Trends Transforming Ethiopian Farming",
-      author: "Emily Rodriguez",
+      author: "Naol Abera",
       date: "December 5, 2024",
       readTime: "7 min read",
       category: "Agriculture Tech",
