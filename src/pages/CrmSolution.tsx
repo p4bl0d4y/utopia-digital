@@ -1,4 +1,3 @@
-
 import Layout from "@/components/Layout";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -114,28 +113,12 @@ const CrmSolution = () => {
               operations, boost customer satisfaction, and drive sales growth in the Ethiopian market.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                size="lg" 
-                className="bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600"
-                onClick={handleWatchDemo}
-              >
-                Watch Demo
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
               <Link to="/schedule-demo">
-                <Button variant="outline" size="lg" className="border-blue-600 text-blue-600 hover:bg-blue-50 dark:border-blue-400 dark:text-blue-400 dark:hover:bg-blue-950">
+                <Button size="lg" className="bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600">
                   Schedule Demo
+                  <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
-            </div>
-            
-            {/* Demo Credentials Info */}
-            <div className="mt-8 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-800 max-w-md mx-auto">
-              <h3 className="text-sm font-semibold text-blue-800 dark:text-blue-300 mb-2">Demo Login Credentials</h3>
-              <div className="text-sm text-blue-600 dark:text-blue-400 space-y-1">
-                <p><strong>Email:</strong> guest@example.com</p>
-                <p><strong>Password:</strong> guest123</p>
-              </div>
             </div>
           </div>
         </div>

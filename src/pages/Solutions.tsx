@@ -123,12 +123,13 @@ const Solutions = () => {
                     </div>
 
                     <div className="flex flex-col sm:flex-row gap-3">
-                      <Button 
-                        className="flex-1 bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600"
-                        onClick={() => window.open(`/demos/${solution.slug}`, '_blank')}
-                      >
-                        {solution.status === 'available' ? 'Watch Demo' : 'Demo Coming Soon'}
-                      </Button>
+                      <Link to="/schedule-demo" className="flex-1">
+                        <Button 
+                          className="w-full bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600"
+                        >
+                          Schedule Demo
+                        </Button>
+                      </Link>
                       <Link to={`/solutions/${solution.slug}`} className="flex-1">
                         <Button variant="outline" className="w-full border-blue-600 text-blue-600 hover:bg-blue-50 dark:border-blue-400 dark:text-blue-400 dark:hover:bg-blue-950">
                           Learn More
