@@ -74,6 +74,28 @@ const CrmSolution = () => {
     trial: "First Month Free Trial"
   };
 
+  const handleWatchDemo = () => {
+    // Open the demo URL in a new tab
+    const demoWindow = window.open("http://srv834778.hstgr.cloud/admin/login", "_blank");
+    
+    // Try to fill the form after a delay (this may not work due to CORS/security restrictions)
+    setTimeout(() => {
+      try {
+        if (demoWindow && !demoWindow.closed) {
+          // Note: This may not work due to cross-origin restrictions
+          const demoDoc = demoWindow.document;
+          const emailField = demoDoc.querySelector('input[type="email"], input[placeholder*="Email"]');
+          const passwordField = demoDoc.querySelector('input[type="password"], input[placeholder*="Password"]');
+          
+          if (emailField) emailField.value = "guest@example.com";
+          if (passwordField) passwordField.value = "guest123";
+        }
+      } catch (error) {
+        console.log("Auto-fill not possible due to security restrictions");
+      }
+    }, 2000);
+  };
+
   return (
     <Layout>
       {/* Hero Section */}
@@ -92,7 +114,11 @@ const CrmSolution = () => {
               operations, boost customer satisfaction, and drive sales growth in the Ethiopian market.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600">
+              <Button 
+                size="lg" 
+                className="bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600"
+                onClick={handleWatchDemo}
+              >
                 Watch Demo
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
@@ -101,6 +127,15 @@ const CrmSolution = () => {
                   Schedule Demo
                 </Button>
               </Link>
+            </div>
+            
+            {/* Demo Credentials Info */}
+            <div className="mt-8 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-800 max-w-md mx-auto">
+              <h3 className="text-sm font-semibold text-blue-800 dark:text-blue-300 mb-2">Demo Login Credentials</h3>
+              <div className="text-sm text-blue-600 dark:text-blue-400 space-y-1">
+                <p><strong>Email:</strong> guest@example.com</p>
+                <p><strong>Password:</strong> guest123</p>
+              </div>
             </div>
           </div>
         </div>
