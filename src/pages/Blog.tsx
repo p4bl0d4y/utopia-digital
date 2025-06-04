@@ -23,6 +23,16 @@ const Blog = () => {
 
   const blogPosts = [
     {
+      title: "Maximizing Customer Relationships: The Complete CRM Implementation Guide",
+      excerpt: "Learn how to successfully implement a CRM system that transforms your customer management and drives business growth.",
+      image: "https://images.unsplash.com/photo-1553484771-371a605b060b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+      author: "Nathan Samuel",
+      date: "March 18, 2024",
+      readTime: "12 min read",
+      category: "CRM",
+      slug: "crm-implementation-guide"
+    },
+    {
       title: "5 Ways SaaS Solutions Can Reduce Operational Costs",
       excerpt: "Learn practical strategies to cut expenses while improving efficiency through smart SaaS implementation.",
       image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2015&q=80",
@@ -31,6 +41,16 @@ const Blog = () => {
       readTime: "6 min read",
       category: "Cost Optimization",
       slug: "saas-solutions-reduce-costs"
+    },
+    {
+      title: "CRM Best Practices: Building Stronger Customer Relationships",
+      excerpt: "Discover proven strategies for using CRM tools to enhance customer satisfaction and retention in your business.",
+      image: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+      author: "Eyosias Tefera",
+      date: "March 14, 2024",
+      readTime: "9 min read",
+      category: "CRM",
+      slug: "crm-best-practices"
     },
     {
       title: "Data Security Best Practices for Modern Businesses",
@@ -84,7 +104,7 @@ const Blog = () => {
     }
   ];
 
-  const categories = ["All", "AI & Automation", "Cost Optimization", "Security", "Remote Work", "Integration", "Case Studies", "No-Code"];
+  const categories = ["All", "CRM", "AI & Automation", "Cost Optimization", "Security", "Remote Work", "Integration", "Case Studies", "No-Code"];
 
   // Filter posts based on selected category
   const filteredPosts = selectedCategory === "All" 
