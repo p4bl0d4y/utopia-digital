@@ -67,11 +67,18 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                 </Link>
               ))}
               <ThemeToggle />
-              <Link to="/signup">
-                <Button className="bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white">
-                  Submit Info
-                </Button>
-              </Link>
+              <div className="flex items-center space-x-2">
+                <Link to="/login">
+                  <Button variant="ghost" className="text-muted-foreground hover:text-blue-600">
+                    Sign In
+                  </Button>
+                </Link>
+                <Link to="/register">
+                  <Button className="bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white">
+                    Get Started
+                  </Button>
+                </Link>
+              </div>
             </div>
 
             {/* Mobile menu button */}
@@ -105,11 +112,18 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                     {item.name}
                   </Link>
                 ))}
-                <Link to="/signup">
-                  <Button className="bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white w-full">
-                    Submit Info
-                  </Button>
-                </Link>
+                <div className="flex flex-col space-y-2 pt-4 border-t">
+                  <Link to="/login">
+                    <Button variant="ghost" className="w-full text-muted-foreground hover:text-blue-600">
+                      Sign In
+                    </Button>
+                  </Link>
+                  <Link to="/register">
+                    <Button className="bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white w-full">
+                      Get Started
+                    </Button>
+                  </Link>
+                </div>
               </div>
             </div>
           )}

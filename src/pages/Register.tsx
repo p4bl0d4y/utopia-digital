@@ -10,17 +10,17 @@ import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 
-const Login = () => {
+const Register = () => {
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
   const { toast } = useToast();
 
-  const handleSocialLogin = (provider: string) => {
+  const handleSocialRegister = (provider: string) => {
     setIsLoading(true);
-    // Simulate social login
+    // Simulate social registration
     setTimeout(() => {
       toast({
-        title: `${provider} Login Successful!`,
+        title: `Account created with ${provider}!`,
         description: "Redirecting to payment page...",
       });
       navigate("/payment");
@@ -28,13 +28,13 @@ const Login = () => {
     }, 1500);
   };
 
-  const handleEmailLogin = (e: React.FormEvent) => {
+  const handleEmailRegister = (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
-    // Simulate email login
+    // Simulate email registration
     setTimeout(() => {
       toast({
-        title: "Login Successful!",
+        title: "Account Created Successfully!",
         description: "Redirecting to payment page...",
       });
       navigate("/payment");
@@ -47,29 +47,29 @@ const Login = () => {
       <section className="py-20 min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-slate-900 dark:to-slate-800">
         <div className="max-w-md mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8">
-            <Badge className="mb-4 bg-blue-100 text-blue-800 hover:bg-blue-200 dark:bg-blue-900/30 dark:text-blue-400">
-              👋 Welcome Back
+            <Badge className="mb-4 bg-green-100 text-green-800 hover:bg-green-200 dark:bg-green-900/30 dark:text-green-400">
+              🚀 Get Started
             </Badge>
             <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-2">
-              Sign In to Your Account
+              Create Your Account
             </h1>
             <p className="text-muted-foreground">
-              Continue your journey with UTOPIA Digital Solution
+              Join UTOPIA Digital Solution today
             </p>
           </div>
 
           <Card className="border-0 shadow-xl dark:bg-slate-800">
             <CardHeader>
-              <CardTitle className="text-center text-foreground">Sign In</CardTitle>
+              <CardTitle className="text-center text-foreground">Sign Up</CardTitle>
             </CardHeader>
             <CardContent className="space-y-6">
-              {/* Social Sign In */}
+              {/* Social Sign Up */}
               <div className="space-y-3">
                 <Button 
                   variant="outline" 
                   className="w-full" 
                   size="lg"
-                  onClick={() => handleSocialLogin("Google")}
+                  onClick={() => handleSocialRegister("Google")}
                   disabled={isLoading}
                 >
                   <Chrome className="h-5 w-5 mr-2" />
@@ -79,7 +79,7 @@ const Login = () => {
                   variant="outline" 
                   className="w-full" 
                   size="lg"
-                  onClick={() => handleSocialLogin("GitHub")}
+                  onClick={() => handleSocialRegister("GitHub")}
                   disabled={isLoading}
                 >
                   <Github className="h-5 w-5 mr-2" />
@@ -98,8 +98,23 @@ const Login = () => {
                 </div>
               </div>
 
-              {/* Email Sign In Form */}
-              <form onSubmit={handleEmailLogin} className="space-y-4">
+              {/* Email Sign Up Form */}
+              <form onSubmit={handleEmailRegister} className="space-y-4">
+                <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <label htmlFor="firstName" className="block text-sm font-medium text-foreground mb-2">
+                      First Name
+                    </label>
+                    <Input id="firstName" type="text" required />
+                  </div>
+                  <div>
+                    <label htmlFor="lastName" className="block text-sm font-medium text-foreground mb-2">
+                      Last Name
+                    </label>
+                    <Input id="lastName" type="text" required />
+                  </div>
+                </div>
+
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
                     Email Address
@@ -114,16 +129,25 @@ const Login = () => {
                   <Input id="password" type="password" required />
                 </div>
 
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center space-x-2">
-                    <input type="checkbox" id="remember" className="rounded" />
-                    <label htmlFor="remember" className="text-sm text-muted-foreground">
-                      Remember me
-                    </label>
-                  </div>
-                  <Link to="/forgot-password" className="text-sm text-blue-600 dark:text-blue-400 hover:underline">
-                    Forgot password?
-                  </Link>
+                <div>
+                  <label htmlFor="confirmPassword" className="block text-sm font-medium text-foreground mb-2">
+                    Confirm Password
+                  </label>
+                  <Input id="confirmPassword" type="password" required />
+                </div>
+
+                <div className="flex items-center space-x-2">
+                  <input type="checkbox" id="terms" className="rounded" required />
+                  <label htmlFor="terms" className="text-sm text-muted-foreground">
+                    I agree to the{" "}
+                    <Link to="/terms" className="text-blue-600 dark:text-blue-400 hover:underline">
+                      Terms of Service
+                    </Link>{" "}
+                    and{" "}
+                    <Link to="/privacy" className="text-blue-600 dark:text-blue-400 hover:underline">
+                      Privacy Policy
+                    </Link>
+                  </label>
                 </div>
 
                 <Button 
@@ -132,15 +156,15 @@ const Login = () => {
                   size="lg"
                   disabled={isLoading}
                 >
-                  {isLoading ? "Signing In..." : "Sign In"}
+                  {isLoading ? "Creating Account..." : "Create Account"}
                 </Button>
               </form>
 
               <div className="text-center">
                 <p className="text-sm text-muted-foreground">
-                  Don't have an account?{" "}
-                  <Link to="/register" className="text-blue-600 dark:text-blue-400 hover:underline font-medium">
-                    Create account
+                  Already have an account?{" "}
+                  <Link to="/login" className="text-blue-600 dark:text-blue-400 hover:underline font-medium">
+                    Sign in
                   </Link>
                 </p>
               </div>
@@ -152,4 +176,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;
