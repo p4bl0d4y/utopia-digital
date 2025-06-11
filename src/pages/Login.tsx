@@ -21,9 +21,9 @@ const Login = () => {
     setTimeout(() => {
       toast({
         title: `${provider} Login Successful!`,
-        description: "Redirecting to payment page...",
+        description: "Welcome back! Redirecting to your dashboard...",
       });
-      navigate("/payment");
+      navigate("/dashboard");
       setIsLoading(false);
     }, 1500);
   };
@@ -35,9 +35,9 @@ const Login = () => {
     setTimeout(() => {
       toast({
         title: "Login Successful!",
-        description: "Redirecting to payment page...",
+        description: "Welcome back! Redirecting to your dashboard...",
       });
-      navigate("/payment");
+      navigate("/dashboard");
       setIsLoading(false);
     }, 1500);
   };
@@ -51,10 +51,10 @@ const Login = () => {
               👋 Welcome Back
             </Badge>
             <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-2">
-              Sign In to Your Account
+              Access Your CRM Dashboard
             </h1>
             <p className="text-muted-foreground">
-              Continue your journey with UTOPIA Digital Solution
+              Sign in to continue managing your business with UTOPIA CRM
             </p>
           </div>
 

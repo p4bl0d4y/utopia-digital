@@ -20,6 +20,7 @@ import BlogPost from "./pages/BlogPost";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import Dashboard from "./pages/Dashboard";
 import Payment from "./pages/Payment";
 import AccountSetup from "./pages/AccountSetup";
 import ScheduleDemo from "./pages/ScheduleDemo";
