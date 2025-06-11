@@ -21,9 +21,9 @@ const Register = () => {
     setTimeout(() => {
       toast({
         title: `Account created with ${provider}!`,
-        description: "Welcome to UTOPIA CRM! Redirecting to your dashboard...",
+        description: "Redirecting to payment page...",
       });
-      navigate("/dashboard");
+      navigate("/payment");
       setIsLoading(false);
     }, 1500);
   };
@@ -35,9 +35,9 @@ const Register = () => {
     setTimeout(() => {
       toast({
         title: "Account Created Successfully!",
-        description: "Welcome to UTOPIA CRM! Redirecting to your dashboard...",
+        description: "Redirecting to payment page...",
       });
-      navigate("/dashboard");
+      navigate("/payment");
       setIsLoading(false);
     }, 1500);
   };
@@ -48,19 +48,19 @@ const Register = () => {
         <div className="max-w-md mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8">
             <Badge className="mb-4 bg-green-100 text-green-800 hover:bg-green-200 dark:bg-green-900/30 dark:text-green-400">
-              🚀 Join UTOPIA CRM
+              🚀 Get Started
             </Badge>
             <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-2">
-              Start Your CRM Journey
+              Create Your Account
             </h1>
             <p className="text-muted-foreground">
-              Create your account to access Ethiopia's leading CRM solution
+              Join UTOPIA Digital Solution today
             </p>
           </div>
 
           <Card className="border-0 shadow-xl dark:bg-slate-800">
             <CardHeader>
-              <CardTitle className="text-center text-foreground">Create CRM Account</CardTitle>
+              <CardTitle className="text-center text-foreground">Sign Up</CardTitle>
             </CardHeader>
             <CardContent className="space-y-6">
               {/* Social Sign Up */}
@@ -156,7 +156,7 @@ const Register = () => {
                   size="lg"
                   disabled={isLoading}
                 >
-                  {isLoading ? "Creating Account..." : "Create CRM Account"}
+                  {isLoading ? "Creating Account..." : "Create Account"}
                 </Button>
               </form>
 
