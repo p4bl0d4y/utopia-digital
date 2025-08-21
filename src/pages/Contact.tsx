@@ -226,7 +226,7 @@ const Contact = () => {
               </Button>
             </Link>
             <Link to="/solutions">
-              <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-blue-600 px-8 py-3 text-lg font-semibold">
+              <Button variant="outline" size="lg" className="border-white/80 text-white hover:bg-white/10 hover:text-white px-8 py-3 text-lg font-semibold">
                 View Solutions
               </Button>
             </Link>
