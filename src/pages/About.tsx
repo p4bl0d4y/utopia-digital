@@ -27,12 +27,14 @@ const About = () => {
     {
       name: "Nathan Samuel",
       role: "Founder & CEO",
+      email: "ns@utopiadigitalsolutions.com",
       image: "/lovable-uploads/b7686cea-fff3-44ab-99ed-9b6ff25e9d4d.png",
       bio: "Visionary leader driving Ethiopia's digital transformation through innovative business solutions and strategic partnerships."
     },
     {
-      name: "Eyosias Tefera",
+      name: "Eyosyas Tefera",
       role: "Co-founder & Lead Technician",
+      email: "es@utopiadigitalsolutions.com",
       image: "/lovable-uploads/f35217e1-c1e0-40fd-bab9-668400c922a2.png",
       bio: "Technical expert specializing in scalable solutions for emerging markets and enterprise system architecture."
     },
@@ -177,7 +179,10 @@ const About = () => {
                     className="w-24 h-24 rounded-full mx-auto mb-4 object-cover"
                   />
                   <h3 className="text-lg font-semibold text-foreground mb-1">{member.name}</h3>
-                  <p className="text-blue-600 dark:text-blue-400 font-medium mb-3">{member.role}</p>
+                  <p className="text-blue-600 dark:text-blue-400 font-medium mb-1">{member.role}</p>
+                  {member.email && (
+                    <p className="text-sm text-blue-600 dark:text-blue-400 mb-3">{member.email}</p>
+                  )}
                   <p className="text-sm text-muted-foreground">{member.bio}</p>
                 </CardContent>
               </Card>

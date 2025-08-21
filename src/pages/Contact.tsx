@@ -14,7 +14,7 @@ const Contact = () => {
       icon: <Mail className="h-6 w-6 text-blue-600 dark:text-blue-400" />,
       title: "Email Us",
       description: "Send us an email and we'll respond within 24 hours",
-      contact: "Coming Soon",
+      contact: "hello@utopiadigitalsolutions.com",
       action: "Send Email"
     },
     {
@@ -28,7 +28,7 @@ const Contact = () => {
       icon: <Users className="h-6 w-6 text-blue-600 dark:text-blue-400" />,
       title: "Sales Team",
       description: "Get in touch with our sales team for business solutions",
-      contact: "Coming Soon",
+      contact: "sales@utopiadigitalsolutions.com",
       action: "Contact Sales"
     }
   ];
