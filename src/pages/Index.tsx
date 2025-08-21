@@ -15,6 +15,7 @@ import {
   Clock
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import heroBackground from "@/assets/hero-background.jpg";
 
 const Index = () => {
   const features = [
@@ -84,29 +85,41 @@ const Index = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-slate-900 dark:to-slate-800 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative py-20 overflow-hidden">
+        {/* Background Image with Overlay */}
+        <div className="absolute inset-0">
+          <img 
+            src={heroBackground} 
+            alt="Hero Background" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/70 via-purple-900/50 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent"></div>
+        </div>
+        
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <Badge className="mb-6 bg-blue-100 text-blue-800 hover:bg-blue-200 dark:bg-blue-900/30 dark:text-blue-400">
+            <Badge className="mb-6 bg-white/10 text-white border border-white/20 backdrop-blur-sm">
               🚀 Transforming Ethiopian Business
             </Badge>
-            <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
-              UTOPIA Digital Solution
-              <span className="text-blue-600 dark:text-blue-400 block">for Ethiopia's Future</span>
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 font-display">
+              UTOPIA
+              <span className="text-blue-300 block">DIGITAL SOLUTIONS</span>
+              <span className="text-lg md:text-xl font-sans font-normal block mt-2">for Ethiopia's Future</span>
             </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
+            <p className="text-xl text-blue-100 max-w-3xl mx-auto mb-8">
               Revolutionizing Ethiopian business through innovative SaaS solutions. 
               Streamline operations, boost exports, and modernize agriculture with cutting-edge technology.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
               <Link to="/signup">
-                <Button size="lg" className="bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600">
+                <Button size="lg" className="bg-white text-blue-600 hover:bg-blue-50 font-semibold">
                   Get Started
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
               <Link to="/contact">
-                <Button variant="outline" size="lg" className="border-blue-600 text-blue-600 hover:bg-blue-50 dark:border-blue-400 dark:text-blue-400 dark:hover:bg-blue-950">
+                <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-blue-600 backdrop-blur-sm">
                   Schedule Demo
                 </Button>
               </Link>

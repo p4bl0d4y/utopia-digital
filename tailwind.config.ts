@@ -10,6 +10,10 @@ export default {
 	],
 	prefix: "",
 	theme: {
+		fontFamily: {
+			'display': ['Playfair Display', 'serif'],
+			'sans': ['Inter', 'sans-serif'],
+		},
 		container: {
 			center: true,
 			padding: '2rem',

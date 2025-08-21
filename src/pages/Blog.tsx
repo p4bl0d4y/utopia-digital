@@ -44,9 +44,9 @@ const Blog = () => {
     },
     {
       title: "CRM Best Practices: Building Stronger Customer Relationships",
-      excerpt: "Discover proven strategies for using CRM tools to enhance customer satisfaction and retention in your business.",
+      excerpt: "Master proven strategies for leveraging CRM tools to enhance customer satisfaction, improve retention rates, and build lasting relationships that drive sustainable business growth.",
       image: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
-      author: "Eyosias Tefera",
+      author: "Eyosyas Tefera",
       date: "March 14, 2024",
       readTime: "9 min read",
       category: "CRM",
@@ -64,9 +64,9 @@ const Blog = () => {
     },
     {
       title: "Building a Remote-First Culture with Digital Tools",
-      excerpt: "How to create an effective remote work environment using the right combination of digital collaboration tools.",
+      excerpt: "Transform your organization with proven strategies for building a thriving remote-first workplace using cutting-edge digital tools and clear communication protocols.",
       image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
-      author: "Eyosias Tefera",
+      author: "Eyosyas Tefera",
       date: "March 8, 2024",
       readTime: "5 min read",
       category: "Remote Work",
@@ -74,7 +74,7 @@ const Blog = () => {
     },
     {
       title: "Integration Strategies: Connecting Your Tech Stack",
-      excerpt: "A comprehensive guide to seamlessly integrating multiple software solutions for maximum efficiency.",
+      excerpt: "Unlock maximum efficiency with comprehensive strategies for seamlessly integrating multiple software solutions, eliminating data silos, and creating unified workflows.",
       image: "https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
       author: "Nathan Samuel",
       date: "March 5, 2024",
@@ -84,9 +84,9 @@ const Blog = () => {
     },
     {
       title: "Customer Success Stories: Real ROI from Digital Transformation",
-      excerpt: "See how our clients achieved measurable results through strategic digital transformation initiatives.",
+      excerpt: "Discover inspiring success stories from Ethiopian businesses that achieved remarkable growth and efficiency gains through strategic digital transformation initiatives.",
       image: "https://images.unsplash.com/photo-1551836022-deb4988cc6c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
-      author: "Eyosias Tefera",
+      author: "Eyosyas Tefera",
       date: "March 3, 2024",
       readTime: "10 min read",
       category: "Case Studies",
@@ -94,7 +94,7 @@ const Blog = () => {
     },
     {
       title: "The Rise of No-Code Solutions in Enterprise",
-      excerpt: "Exploring how no-code platforms are democratizing software development and accelerating business innovation.",
+      excerpt: "Explore how no-code platforms are revolutionizing enterprise development, empowering citizen developers, and accelerating innovation while maintaining security standards.",
       image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
       author: "Naol Abera",
       date: "March 1, 2024",

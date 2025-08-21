@@ -2,7 +2,7 @@ import Layout from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Check, Star } from "lucide-react";
+import { Check, Star, Target, Shield, TrendingUp } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Pricing = () => {
@@ -150,7 +150,11 @@ const Pricing = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <Card className="border-0 shadow-lg dark:bg-slate-800 text-center">
               <CardContent className="p-8">
-                <div className="text-4xl mb-4">🎯</div>
+                <div className="mb-4 flex justify-center">
+                  <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center">
+                    <Target className="h-8 w-8 text-white" />
+                  </div>
+                </div>
                 <h3 className="text-xl font-semibold text-foreground mb-4">Complete Solution</h3>
                 <p className="text-muted-foreground">All modules and features included in one package. No need to compare plans or worry about limitations.</p>
               </CardContent>
@@ -158,7 +162,11 @@ const Pricing = () => {
             
             <Card className="border-0 shadow-lg dark:bg-slate-800 text-center">
               <CardContent className="p-8">
-                <div className="text-4xl mb-4">🆓</div>
+                <div className="mb-4 flex justify-center">
+                  <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center">
+                    <Shield className="h-8 w-8 text-white" />
+                  </div>
+                </div>
                 <h3 className="text-xl font-semibold text-foreground mb-4">Risk-Free Trial</h3>
                 <p className="text-muted-foreground">Try our complete CRM solution for one full month at no cost. Experience all features before committing.</p>
               </CardContent>
@@ -166,7 +174,11 @@ const Pricing = () => {
             
             <Card className="border-0 shadow-lg dark:bg-slate-800 text-center">
               <CardContent className="p-8">
-                <div className="text-4xl mb-4">🔧</div>
+                <div className="mb-4 flex justify-center">
+                  <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center">
+                    <TrendingUp className="h-8 w-8 text-white" />
+                  </div>
+                </div>
                 <h3 className="text-xl font-semibold text-foreground mb-4">Custom Pricing</h3>
                 <p className="text-muted-foreground">Pricing tailored to your business size and needs. Pay only for what makes sense for your organization.</p>
               </CardContent>

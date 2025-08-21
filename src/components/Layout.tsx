@@ -46,8 +46,8 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                 alt="UTOPIA Digital Solution" 
                 className="h-10 w-auto"
               />
-              <span className="text-xl font-bold text-foreground hidden sm:block">
-                UTOPIA Digital Solution
+              <span className="text-xl font-bold text-foreground hidden sm:block font-display">
+                UTOPIA
               </span>
             </Link>
 
