@@ -6,7 +6,6 @@ import { Button } from "@/components/ui/button";
 import { Calendar, Clock, ArrowDown } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { blogPosts as importedBlogPosts } from "@/data/blogPosts";
 
 const Blog = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -23,7 +22,6 @@ const Blog = () => {
   };
 
   const blogPosts = [
-    ...importedBlogPosts,
     {
       title: "Maximizing Customer Relationships: The Complete CRM Implementation Guide",
       excerpt: "Learn how to successfully implement a CRM system that transforms your customer management and drives business growth.",
@@ -45,6 +43,16 @@ const Blog = () => {
       slug: "saas-solutions-reduce-costs"
     },
     {
+      title: "CRM Best Practices: Building Stronger Customer Relationships",
+      excerpt: "Master proven strategies for leveraging CRM tools to enhance customer satisfaction, improve retention rates, and build lasting relationships that drive sustainable business growth.",
+      image: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+      author: "Eyosyas Tefera",
+      date: "March 14, 2024",
+      readTime: "9 min read",
+      category: "CRM",
+      slug: "crm-best-practices"
+    },
+    {
       title: "Data Security Best Practices for Modern Businesses",
       excerpt: "Essential security measures every business should implement to protect sensitive data and maintain customer trust.",
       image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
@@ -53,6 +61,46 @@ const Blog = () => {
       readTime: "7 min read",
       category: "Security",
       slug: "data-security-best-practices"
+    },
+    {
+      title: "Building a Remote-First Culture with Digital Tools",
+      excerpt: "Transform your organization with proven strategies for building a thriving remote-first workplace using cutting-edge digital tools and clear communication protocols.",
+      image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+      author: "Eyosyas Tefera",
+      date: "March 8, 2024",
+      readTime: "5 min read",
+      category: "Remote Work",
+      slug: "remote-first-culture"
+    },
+    {
+      title: "Integration Strategies: Connecting Your Tech Stack",
+      excerpt: "Unlock maximum efficiency with comprehensive strategies for seamlessly integrating multiple software solutions, eliminating data silos, and creating unified workflows.",
+      image: "https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+      author: "Nathan Samuel",
+      date: "March 5, 2024",
+      readTime: "9 min read",
+      category: "Integration",
+      slug: "integration-strategies"
+    },
+    {
+      title: "Customer Success Stories: Real ROI from Digital Transformation",
+      excerpt: "Discover inspiring success stories from Ethiopian businesses that achieved remarkable growth and efficiency gains through strategic digital transformation initiatives.",
+      image: "https://images.unsplash.com/photo-1551836022-deb4988cc6c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+      author: "Eyosyas Tefera",
+      date: "March 3, 2024",
+      readTime: "10 min read",
+      category: "Case Studies",
+      slug: "customer-success-stories"
+    },
+    {
+      title: "The Rise of No-Code Solutions in Enterprise",
+      excerpt: "Explore how no-code platforms are revolutionizing enterprise development, empowering citizen developers, and accelerating innovation while maintaining security standards.",
+      image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+      author: "Naol Abera",
+      date: "March 1, 2024",
+      readTime: "6 min read",
+      category: "No-Code",
+      slug: "no-code-solutions-enterprise"
     }
   ];
 

@@ -56,11 +56,6 @@ const Signup = () => {
 
     setIsSubmitting(false);
     
-    // Redirect to home page after successful submission
-    setTimeout(() => {
-      window.location.href = "/";
-    }, 2000);
-    
     // Reset form
     const form = e.target as HTMLFormElement;
     form.reset();
