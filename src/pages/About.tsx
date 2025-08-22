@@ -23,20 +23,29 @@ const About = () => {
     }
   ];
 
-  const team = [
+  const ceoTeam = [
     {
       name: "Nathan Samuel",
       role: "Founder & CEO",
       email: "ns@utopiadigitalsolutions.com",
       image: "/lovable-uploads/b7686cea-fff3-44ab-99ed-9b6ff25e9d4d.png",
       bio: "Visionary leader driving Ethiopia's digital transformation through innovative business solutions and strategic partnerships."
-    },
+    }
+  ];
+
+  const managementTeam = [
     {
       name: "Eyosyas Tefera",
-      role: "Co-founder & Lead Technician",
+      role: "Lead Technician",
       email: "es@utopiadigitalsolutions.com",
       image: "/lovable-uploads/f35217e1-c1e0-40fd-bab9-668400c922a2.png",
       bio: "Technical expert specializing in scalable solutions for emerging markets and enterprise system architecture."
+    },
+    {
+      name: "Getabill Shibru",
+      role: "Digital Marketing & Social Media Manager",
+      image: "/lovable-uploads/461d6d50-2f3d-49e1-b6b0-f49f93ded69e.png",
+      bio: "Creative digital marketer and graphics design specialist focused on building brand presence and driving engagement across social platforms."
     },
     {
       name: "Naol Abera",
@@ -169,8 +178,30 @@ const About = () => {
             </p>
           </div>
           
+          {/* CEO Section */}
+          <div className="flex justify-center mb-12">
+            {ceoTeam.map((member, index) => (
+              <Card key={index} className="border-0 shadow-lg dark:bg-slate-800 text-center hover:shadow-xl transition-shadow max-w-sm">
+                <CardContent className="p-6">
+                  <img 
+                    src={member.image} 
+                    alt={member.name}
+                    className="w-24 h-24 rounded-full mx-auto mb-4 object-cover"
+                  />
+                  <h3 className="text-lg font-semibold text-foreground mb-1">{member.name}</h3>
+                  <p className="text-blue-600 dark:text-blue-400 font-medium mb-1">{member.role}</p>
+                  {member.email && (
+                    <p className="text-sm text-blue-600 dark:text-blue-400 mb-3">{member.email}</p>
+                  )}
+                  <p className="text-sm text-muted-foreground">{member.bio}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+
+          {/* Management Team Section */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 justify-center">
-            {team.map((member, index) => (
+            {managementTeam.map((member, index) => (
               <Card key={index} className="border-0 shadow-lg dark:bg-slate-800 text-center hover:shadow-xl transition-shadow">
                 <CardContent className="p-6">
                   <img 
