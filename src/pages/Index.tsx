@@ -118,8 +118,8 @@ const Index = () => {
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
-              <Link to="/contact">
-                <Button variant="outline" size="lg" className="border-white/80 text-white hover:bg-white/10 hover:text-white backdrop-blur-sm">
+              <Link to="/schedule-demo">
+                <Button variant="outline" size="lg" className="border-white/80 text-white hover:bg-white hover:text-primary backdrop-blur-sm">
                   Schedule Demo
                 </Button>
               </Link>

@@ -228,7 +228,7 @@ const Pricing = () => {
               </Button>
             </Link>
             <Link to="/schedule-demo">
-              <Button variant="outline" size="lg" className="border-white/80 text-white hover:bg-white/10 hover:text-white px-8 py-3 text-lg">
+              <Button variant="outline" size="lg" className="border-white/80 text-white hover:bg-white hover:text-primary px-8 py-3 text-lg">
                 Schedule Demo
               </Button>
             </Link>

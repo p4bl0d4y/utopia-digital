@@ -18,10 +18,11 @@ import Contact from "./pages/Contact";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import Signup from "./pages/Signup";
-import Login from "./pages/Login";
-import Register from "./pages/Register";
-import Payment from "./pages/Payment";
-import AccountSetup from "./pages/AccountSetup";
+// import Login from "./pages/Login";
+// import Register from "./pages/Register";
+// import Payment from "./pages/Payment";
+// import AccountSetup from "./pages/AccountSetup";
+import BlogAdmin from "./pages/BlogAdmin";
 import ScheduleDemo from "./pages/ScheduleDemo";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
@@ -49,10 +50,11 @@ const AppContent = () => {
       <Route path="/blog" element={<Blog />} />
       <Route path="/blog/:slug" element={<BlogPost />} />
       <Route path="/signup" element={<Signup />} />
-      <Route path="/login" element={<Login />} />
+      {/* <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
       <Route path="/payment" element={<Payment />} />
-      <Route path="/account-setup" element={<AccountSetup />} />
+      <Route path="/account-setup" element={<AccountSetup />} /> */}
+      <Route path="/blog-admin" element={<BlogAdmin />} />
       <Route path="/schedule-demo" element={<ScheduleDemo />} />
       <Route path="/privacy" element={<Privacy />} />
       <Route path="/terms" element={<Terms />} />

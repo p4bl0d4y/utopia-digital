@@ -4,12 +4,28 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ArrowLeft, Calendar, User, Clock } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
+import { blogPosts } from "@/data/blogPosts";
 
 const BlogPost = () => {
   const { slug } = useParams();
   
-  // Sample blog post data - in a real app, this would come from a CMS or API
-  const blogPosts = {
+  // Find the blog post by slug
+  const currentPost = blogPosts.find(post => post.slug === slug);
+  
+  if (!currentPost) {
+    return (
+      <Layout>
+        <div className="py-20 text-center">
+          <h1 className="text-2xl font-bold text-foreground mb-4">Blog Post Not Found</h1>
+          <Link to="/blog">
+            <Button>Back to Blog</Button>
+          </Link>
+        </div>
+      </Layout>
+    );
+  }
+
+  const blogPostsLegacy = {
     "future-of-business-automation": {
       title: "The Future of Business Automation: AI-Driven Workflows in 2024",
       author: "Nathan Samuel",
@@ -208,25 +224,25 @@ const BlogPost = () => {
           </Link>
           
           <Badge className="mb-4 bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-400">
-            {post.category}
+            {currentPost.category}
           </Badge>
           
           <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-            {post.title}
+            {currentPost.title}
           </h1>
           
           <div className="flex items-center space-x-6 text-muted-foreground mb-8">
             <div className="flex items-center space-x-2">
               <User className="h-4 w-4" />
-              <span>{post.author}</span>
+              <span>{currentPost.author}</span>
             </div>
             <div className="flex items-center space-x-2">
               <Calendar className="h-4 w-4" />
-              <span>{post.date}</span>
+              <span>{currentPost.date}</span>
             </div>
             <div className="flex items-center space-x-2">
               <Clock className="h-4 w-4" />
-              <span>{post.readTime}</span>
+              <span>{currentPost.readTime}</span>
             </div>
           </div>
         </div>
@@ -236,8 +252,8 @@ const BlogPost = () => {
       <section className="py-0">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <img 
-            src={post.image} 
-            alt={post.title}
+            src={currentPost.image} 
+            alt={currentPost.title}
             className="w-full h-64 md:h-96 object-cover rounded-lg shadow-lg"
           />
         </div>
@@ -246,10 +262,9 @@ const BlogPost = () => {
       {/* Content */}
       <section className="py-12">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div 
-            className="prose prose-lg max-w-none dark:prose-invert"
-            dangerouslySetInnerHTML={{ __html: post.content }}
-          />
+          <div className="prose prose-lg max-w-none dark:prose-invert">
+            <div dangerouslySetInnerHTML={{ __html: currentPost.content }} />
+          </div>
         </div>
       </section>
 

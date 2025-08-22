@@ -160,7 +160,7 @@ const Solutions = () => {
               </Button>
             </Link>
             <Link to="/contact">
-              <Button size="lg" variant="outline" className="border-white/80 text-white hover:bg-white/10 hover:text-white">
+              <Button size="lg" variant="outline" className="border-white/80 text-white hover:bg-white hover:text-primary">
                 Contact Sales
               </Button>
             </Link>
